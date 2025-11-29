@@ -14,19 +14,19 @@
         html {
             font-size: 16px;
             height: 100vh;
-            background: linear-gradient(180deg, #d0e587 0%, #f2f8bd 100%);
+            background-color: #212121;
             overflow: hidden;
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: "Roboto Light", Calibri, sans-serif;
             line-height: 1.5;
         }
 
         h1 {
             margin: 2rem 0;
             letter-spacing: .1rem;
-            color: #d3fafb;
+            color: #fff;
             text-shadow: 3px 3px 3px rgba(0, 0, 0, .5);
         }
 
@@ -49,16 +49,17 @@
             li {
                 flex: 1;
                 display: flex;
-                background-color: #0e7490;
+                background: rgba(255, 255, 255, .1);
                 padding: .5rem 1rem;
                 border-radius: .25rem;
-                box-shadow: 5px 5px 10px rgba(0, 0, 0, .5);
+                box-shadow: 3px 3px 5px rgba(255, 255, 255, .1);
                 transition: .3s;
+                backdrop-filter: blur(10px);
+                border: 2px solid rgba(255, 255, 255, .2);
 
                 &:hover {
                     transform: translate(-1px, -1px);
-                    background-color: #155e75;
-                    box-shadow: 10px 10px 10px rgba(0, 0, 0, .3);
+                    box-shadow: 3px 3px 5px rgba(255, 255, 255, .1);
                 }
             }
 
@@ -67,7 +68,11 @@
                 font-size: 1.5rem;
                 font-variant: small-caps;
                 text-decoration: none;
-                color: #d3fafb;
+                color: #fff;
+            }
+
+            a:hover {
+                color: #f00;
             }
         }
 
@@ -105,7 +110,7 @@
 </head>
 <body>
 <main>
-    <h1>[Naam]</h1>
+    <h1>Wouter Heijligen</h1>
     <nav>
         <ul>
             <li><a href="portfolio/index.html" target="subsite">Portfolio</a></li>

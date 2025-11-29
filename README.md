@@ -2,12 +2,12 @@
 
 :exclamation: Houd deze repo 100% up-to-date :exclamation:
 
-| Student         | Info                                                                     |
-|:----------------|:-------------------------------------------------------------------------|
-| Name            | Wouter Heijligen                                                         |
-| email           | [r1099579@student.thomasmore.be](mailto:r1099579@student.thomasmore.be)  |
-| Github Username | WouterHeijligen                                                          |
-| Hosting         | [https://yourdomain.netlify.app](https://yourdomain.netlify.app)         |
+| Student         | Info                                                                                 |
+|:----------------|:-------------------------------------------------------------------------------------|
+| Name            | Wouter Heijligen                                                                     |
+| email           | [r1099579@student.thomasmore.be](mailto:r1099579@student.thomasmore.be)              |
+| Github Username | WouterHeijligen                                                                      |
+| Hosting         | [portfoliowouterheijligen.netlify.app](https://portfoliowouterheijligen.netlify.app) |
 
 ## Gebruik
 
