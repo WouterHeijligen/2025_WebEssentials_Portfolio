@@ -9,9 +9,7 @@
     <!-- Custom 404 page specific CSS  -->
     <style>
         .error-container {
-            text-align: center;
             font-size: 180px;
-            font-family: "Roboto Light", Calibri, sans-serif;
             font-weight: 800;
             margin: 20px 15px;
         }
@@ -19,22 +17,21 @@
             display: inline-block;
             line-height: 0.7;
             position: relative;
-        }
-        .error-container > span {
-            display: inline-block;
-            position: relative;
             vertical-align: middle;
         }
+        /* style left 4 */
         .error-container > span:nth-of-type(1) {
             color: rgba(210, 0, 60, 0.8);
         }
-        .error-container > span:nth-of-type(3) {
-            color: #d2003c;
-        }
+        /* style 0 */
         .error-container > span:nth-of-type(2) {
             width: 120px;
             height: 120px;
             border-radius: 999px;
+        }
+        /* style right 4 */
+        .error-container > span:nth-of-type(3) {
+            color: rgba(210, 0, 60, 0.8);
         }
         .error-container > span:nth-of-type(2):before,
         .error-container > span:nth-of-type(2):after {
@@ -47,50 +44,39 @@
             inset 0 30px 0 rgba(210, 147, 0, 0.4),
             inset -30px 0 0 rgba(0, 210, 147, 0.4),
             inset 0 -30px 0 rgba(210, 0, 60, 0.6);
-            animation: shadowsdancing 4s infinite;
         }
+        /* add rotating effect of colors */
         .error-container > span:nth-of-type(2):before {
             transform: rotate(45deg);
         }
-
+        /* make the 0 match the style of the collored container */
         .screen-reader-text {
             position: absolute;
             top: -9999em;
             left: -9999em;
         }
-
-        * {
-            box-sizing: border-box;
-        }
+        /* general body styling */
         body {
+            font-family: "Roboto Light", Calibri, sans-serif;
             background-color: #00162b;
-            margin-bottom: 50px;
-        }
-        html, button, input, select, textarea {
-            font-family: 'Montserrat', Helvetica, sans-serif;
-            color: #92a4ad;
-        }
-        h1 {
-            text-align: center;
-            margin: 30px 15px;
             color: #fff;
+            text-align: center;
+        }
+        /* set header1 margins to leave a gap at the top */
+        h1 {
+            margin: 30px 15px;
         }
         .zoom-area {
             max-width: 490px;
             margin: 30px auto 30px;
             font-size: 19px;
-            text-align: center;
-            color: #fff;
         }
-        .link-container {
-            text-align: center;
-        }
+        /* style the button */
         a.more-link {
             text-transform: uppercase;
-            font-size: 15px;
+            font-size: 20px;
             background-color: rgba(255, 255, 255, .1);
             padding: 10px 15px;
-            border-radius: 0;
             color: #fff;
             display: inline-block;
             margin-right: 5px;
@@ -98,12 +84,44 @@
             line-height: 1.5;
             text-decoration: none;
             margin-top: 50px;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             border: 2px solid rgba(255, 255, 255, .2);
         }
-
+        /* style button hover effect */
         a.more-link:hover {
             color: #d2003c;
+        }
+
+        @media screen and (max-width: 768px) {
+            .error-container {
+                /* Reduce the massive font size for small screens */
+                font-size: 100px;
+                margin: 10px 10px; /* Reduce margin */
+            }
+
+            /* Target the central circular '0' to reduce its size */
+            .error-container > span:nth-of-type(2) {
+                width: 70px; /* Reduced width */
+                height: 70px; /* Reduced height */
+            }
+
+            /* Target the pseudo-elements for the '0' to reduce the shadow offsets */
+            .error-container > span:nth-of-type(2):before,
+            .error-container > span:nth-of-type(2):after {
+                box-shadow:
+                        inset 15px 0 0 rgba(0, 60, 210, 0.4), /* Halved the offset (30px -> 15px) */
+                        inset 0 15px 0 rgba(210, 147, 0, 0.4),
+                        inset -15px 0 0 rgba(0, 210, 147, 0.4),
+                        inset 0 -15px 0 rgba(210, 0, 60, 0.6);
+            }
+            /* Also scale down the main heading */
+            h1 {
+                font-size: 1.5rem; /* Or an absolute value like 24px */
+            }
+
+            .zoom-area {
+                font-size: 16px;
+            }
         }
     </style>
     <title>Page not found</title>
