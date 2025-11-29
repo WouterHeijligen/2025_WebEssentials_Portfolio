@@ -11,7 +11,7 @@ body {
     min-height: 100vh;
     background-size: cover;
     background-position: center;
-    background-color: #212121;
+    background-color: #00162b;
 }
 
 /* header properties, set background etc for a modern navbar display */
@@ -61,7 +61,7 @@ body {
 }
 /* change text color on menu hovering */
 .navbar a:hover {
-    color: #f00;
+    color: #d2003c;
 }
 
 /* change layout for smaller screens */
