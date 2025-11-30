@@ -14,58 +14,87 @@ body {
     background-color: #00162b;
 }
 
+.main-content {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 50px;
+    color: #fff;
+}
+
 /* header properties, set background etc for a modern navbar display */
 .header {
-    position: fixed;
+    position: absolute;
+    margin: 100px 5%;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 90%;
     padding: 20px 100px;
     background: rgba(255, 255, 255, .1);
     display: flex;
     justify-content: space-between;
     align-items: center;
     backdrop-filter: blur(10px);
-    border-bottom: 2px solid rgba(255, 255, 255, .2);
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 15px;
 }
-/* set white flash effect to the right when hovering on/off the navbar */
-.header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .4), transparent);
-    transition: .5s;
-}
-/* flash back to the left when leaving the menu */
-.header:hover::before {
-    left: 100%;
-}
+
 /* set properties for white logo */
 .logo {
     color: #fff;
-    font-size: 25px;
+    font-size: 30px;
     text-decoration: none;
     font-weight: 600;
     cursor: default;
 }
+
 /* set properties for links in navbar */
 .navbar a {
     color: #fff;
-    font-size: 20px;
+    font-size: 24px;
     text-decoration: none;
     margin-left: 35px;
     transition: .3s;
 }
+
 /* change text color on menu hovering */
 .navbar a:hover {
-    color: #d2003c;
+    color: rgba(210, 0, 60, 0.8);
 }
 
-/* change layout for vertical menu on smaller screens */
-@media (max-width: 768px) {
+#navigation {
+    background-image: url(../assets/top-banner.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 800px;
+}
+
+/* Hide the actual checkbox input completely */
+#check {
+    display: none;
+}
+
+/* mobile menu icon style, hide on large screens */
+#menu-icon {
+    width: 36px;       /* Set the size */
+    height: 36px;      /* Set the size */
+    vertical-align: middle; /* Ensures it aligns nicely */
+    color: #fff;
+    display: none;
+    cursor: pointer;
+}
+
+/* change menu padding for in between screen sizes */
+@media (max-width: 1280px) {
+    .header {
+        padding: 20px 50px;
+    }
+}
+/* change menu layout for smartphone screens */
+@media (max-width: 905px) {
+    #menu-icon {
+        display: block;
+    }
     .header{
         padding: 1.25rem 4%;
     }
@@ -77,10 +106,19 @@ body {
         padding: .5rem 4%;
         background: rgba(255, 255, 255, .1);
         border-bottom: 2px solid rgba(255, 255, 255, .2);
+        /* HIDE the navbar by default on mobile */
+        display: none;
     }
 
     .navbar a {
         display: block;
+        font-size: 18px;
         margin: 1.5rem 0;
     }
+
+    /* THE MAGIC: When #check is checked, find the sibling .navbar and display it */
+    #check:checked ~ .navbar {
+        display: block;
+    }
 }
+

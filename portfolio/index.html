@@ -3,35 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="assets/website-icon.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <!-- Eigen CSS -->
     <link rel="stylesheet" href="css/portfolio.css">
-    <title>Title</title>
+    <title>Home</title>
 </head>
 <body>
-<header class="header">
-    <a href="#" class="logo">Logo</a>
-    <nav class="navbar">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Portfolio</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
-    </nav>
-</header>
-<main>
-    <h1>Mijn portfolio</h1>
-    <hr>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam eius iste maxime officia praesentium quasi
-        quibusdam. Adipisci assumenda deserunt eligendi molestiae mollitia necessitatibus nihil quos repellat unde!
-        Odit, saepe, unde?</p>
-    <p>Consectetur deserunt dicta exercitationem qui ratione sunt tenetur voluptatem? Accusamus amet eligendi est
-        facilis id ipsum maxime minus, nisi tempora unde! Aspernatur doloremque, eum inventore maiores nobis quam ut
-        veritatis.</p>
-    <p>Aliquam autem dicta facere, fugit magni natus officiis! Assumenda at autem eum ex excepturi minima minus
-        perspiciatis quae saepe soluta. Adipisci at dolore inventore non possimus quod repudiandae sed voluptates.</p>
+<div class="container-fluid" id="navigation">
+    <header class="header">
+        <a href="#" class="logo">Max Verstappen</a>
+        <!-- Mobile device menu icon, will be hidden on large screens -->
+        <!-- Workaround for no javascript coding to display menu after clicking mobile icon -->
+        <input type="checkbox" id="check">
+        <!-- Mobile device menu icon -->
+        <label for="check" class="icons">
+            <img src="assets/mobile-menu-icon.png" alt="Menu Icon" id="menu-icon">
+        </label>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="page%201.html">Page 1</a>
+            <a href="page%202.html">Page 2</a>
+            <a href="page%203.html">Page 3</a>
+            <a href="page%204.html">Page 4</a>
+        </nav>
+    </header>
+</div>
+<main class="main-content">
+    <div>
+        <section class="max-verstappen-intro">
+            <header>
+                <h1>Max Verstappen: The Reigning F1 Champion</h1>
+            </header>
+            <p>Welcome to the world of Max Verstappen, the Dutch racing sensation who has dominated Formula 1 and rewritten the record books. Competing for Oracle Red Bull Racing under the famous Car Number 1, Max is a four-time Formula 1 World Drivers' Champion, winning consecutively from 2021 to 2024.</p>
+            <p>Born on September 30, 1997, Max’s destiny in motorsport was practically written in his genes as the son of former F1 driver Jos Verstappen and successful kart racer Sophie Kumpen. His career was marked by speed from the start:</p>
+            <div class="achievement-list">
+                <h2>Key Achievements</h2>
+                <ul>
+                    <li>
+                        <strong>Youngest Ever:</strong> In 2015, Max made his F1 debut at the age of 17, becoming the youngest driver in the sport's history.
+                    </li>
+                    <li>
+                        <strong>Instant Success:</strong> In 2016, he was promoted to Red Bull Racing and famously won his very first race with the team at the Spanish Grand Prix, making him the youngest-ever Grand Prix winner at 18 years and 228 days old.
+                    </li>
+                    <li>
+                        <strong>Record Breaker:</strong> Max is known for his aggressive driving style, exceptional car control, and relentless drive to win. His 2023 season was one of the most dominant ever, setting the record for the most race wins in a single season (19) and most consecutive wins (10).
+                    </li>
+                </ul>
+            </div>
+
+            <p>Known for his confidence, tenacity, and ability to perform under pressure, Max Verstappen has established himself as one of the greatest drivers of his generation.</p>
+        </section>
+    </div>
 </main>
 
 </body>
