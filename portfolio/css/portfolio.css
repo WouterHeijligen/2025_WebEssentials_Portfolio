@@ -3,6 +3,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* line-height is unitless and typically not converted */
+    line-height: 1.618;
     font-family: "Roboto Light", Calibri, sans-serif;
 }
 
@@ -14,34 +16,33 @@ body {
     background-color: #00162b;
 }
 
-.main-content {
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 50px;
-    color: #fff;
-}
-
 /* header properties, set background etc for a modern navbar display */
 .header {
     position: absolute;
-    margin: 100px 5%;
+    /* 100px / 16 = 6.25rem */
+    margin: 6.25rem 5%;
     top: 0;
     left: 0;
     width: 90%;
-    padding: 20px 100px;
+    /* 20px / 16 = 1.25rem; 100px / 16 = 6.25rem */
+    padding: 1.25rem 6.25rem;
     background: rgba(255, 255, 255, .1);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* Kept in px for blur radius */
     backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, .2);
-    border-radius: 15px;
+    /* Kept in px for border thickness */
+    border: 2px solid rgba(255, 255, 255, .05);
+    /* 15px / 16 = 0.9375rem */
+    border-radius: 0.9375rem;
 }
 
 /* set properties for white logo */
 .logo {
     color: #fff;
-    font-size: 30px;
+    /* 30px / 16 = 1.875rem */
+    font-size: 1.875rem;
     text-decoration: none;
     font-weight: 600;
     cursor: default;
@@ -50,10 +51,10 @@ body {
 /* set properties for links in navbar */
 .navbar a {
     color: #fff;
-    font-size: 24px;
+    font-size: 1.5rem;
     text-decoration: none;
-    margin-left: 35px;
-    transition: .3s;
+    margin-left: 2.1rem;
+    transition: .5s;
 }
 
 /* change text color on menu hovering */
@@ -61,12 +62,25 @@ body {
     color: rgba(210, 0, 60, 0.8);
 }
 
+/* set main-content properties */
+.main-content {
+    /* 50px / 16 = 3.125rem */
+    padding-top: 3.125rem;
+    color: #fff;
+}
+
+.row {
+    background: rgba(210, 0, 60, 0.8);
+    padding: 7.5rem 5% 7.5rem 5%;
+}
+
 #navigation {
     background-image: url(../assets/top-banner.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 800px;
+    /* 800px / 16 = 50rem */
+    height: 50rem;
 }
 
 /* Hide the actual checkbox input completely */
@@ -76,9 +90,10 @@ body {
 
 /* mobile menu icon style, hide on large screens */
 #menu-icon {
-    width: 36px;       /* Set the size */
-    height: 36px;      /* Set the size */
-    vertical-align: middle; /* Ensures it aligns nicely */
+    /* 36px / 16 = 2.25rem */
+    width: 2.25rem;
+    height: 2.25rem;
+    vertical-align: middle;
     color: #fff;
     display: none;
     cursor: pointer;
@@ -87,7 +102,8 @@ body {
 /* change menu padding for in between screen sizes */
 @media (max-width: 1280px) {
     .header {
-        padding: 20px 50px;
+        /* 20px / 16 = 1.25rem; 50px / 16 = 3.125rem */
+        padding: 1.25rem 3.125rem;
     }
 }
 /* change menu layout for smartphone screens */
@@ -96,15 +112,16 @@ body {
         display: block;
     }
     .header{
+        /* 20px / 16 = 1.25rem; */
         padding: 1.25rem 4%;
     }
     .navbar {
-        position: fixed;
         top: 100%;
         left: 0;
         width: 100%;
         padding: .5rem 4%;
         background: rgba(255, 255, 255, .1);
+        /* Kept in px for border thickness */
         border-bottom: 2px solid rgba(255, 255, 255, .2);
         /* HIDE the navbar by default on mobile */
         display: none;
@@ -112,7 +129,8 @@ body {
 
     .navbar a {
         display: block;
-        font-size: 18px;
+        /* 18px / 16 = 1.125rem */
+        font-size: 1.125rem;
         margin: 1.5rem 0;
     }
 

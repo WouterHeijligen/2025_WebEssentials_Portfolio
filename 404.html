@@ -7,32 +7,43 @@
     <link rel="stylesheet" href="portfolio/css/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="portfolio/css/bootstrap-grid.min.css">
     <!-- Custom 404 page specific CSS  -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="portfolio/assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="portfolio/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="portfolio/assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="portfolio/assets/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="portfolio/assets/favicon/site.webmanifest" />
     <style>
         .error-container {
-            font-size: 180px;
+            font-size: 11.25rem; /* 180px */
             font-weight: 800;
-            margin: 20px 15px;
+            margin: 1.25rem 0.9375rem; /* 20px 15px */
         }
+
         .error-container > span {
             display: inline-block;
             line-height: 0.7;
             position: relative;
             vertical-align: middle;
         }
+
         /* style left 4 */
         .error-container > span:nth-of-type(1) {
             color: rgba(210, 0, 60, 0.8);
         }
+
         /* style 0 */
         .error-container > span:nth-of-type(2) {
-            width: 120px;
-            height: 120px;
-            border-radius: 999px;
+            width: 7.5rem;  /* 120px */
+            height: 7.5rem; /* 120px */
+            border-radius: 999px; /* keep px for circle */
         }
+
         /* style right 4 */
         .error-container > span:nth-of-type(3) {
             color: rgba(210, 0, 60, 0.8);
         }
+
         .error-container > span:nth-of-type(2):before,
         .error-container > span:nth-of-type(2):after {
             content:"";
@@ -40,21 +51,24 @@
             top: 0; left: 0;
             width: inherit; height: inherit;
             border-radius: 999px;
-            box-shadow: inset 30px 0 0 rgba(0, 60, 210, 0.4),
-            inset 0 30px 0 rgba(210, 147, 0, 0.4),
-            inset -30px 0 0 rgba(0, 210, 147, 0.4),
-            inset 0 -30px 0 rgba(210, 0, 60, 0.6);
+            box-shadow: inset 1.875rem 0 0 rgba(0, 60, 210, 0.4), /* 30px */
+            inset 0 1.875rem 0 rgba(210, 147, 0, 0.4),
+            inset -1.875rem 0 0 rgba(0, 210, 147, 0.4),
+            inset 0 -1.875rem 0 rgba(210, 0, 60, 0.6);
         }
+
         /* add rotating effect of colors */
         .error-container > span:nth-of-type(2):before {
             transform: rotate(45deg);
         }
-        /* make the 0 match the style of the collored container */
+
+        /* make the 0 match the style of the colored container */
         .screen-reader-text {
             position: absolute;
             top: -9999em;
             left: -9999em;
         }
+
         /* general body styling */
         body {
             font-family: "Roboto Light", Calibri, sans-serif;
@@ -62,65 +76,69 @@
             color: #fff;
             text-align: center;
         }
+
         /* set header1 margins to leave a gap at the top */
         h1 {
-            margin: 30px 15px;
+            margin: 1.875rem 0.9375rem; /* 30px 15px */
         }
+
         .zoom-area {
-            max-width: 490px;
-            margin: 30px auto 30px;
-            font-size: 19px;
+            max-width: 30.625rem; /* 490px */
+            margin: 1.875rem auto 1.875rem; /* 30px */
+            font-size: 1.1875rem; /* 19px */
         }
+
         /* style the button */
         a.more-link {
             text-transform: uppercase;
-            font-size: 20px;
+            font-size: 1.25rem; /* 20px */
             background-color: rgba(255, 255, 255, .1);
-            padding: 10px 15px;
+            padding: 0.625rem 0.9375rem; /* 10px 15px */
             color: #fff;
             display: inline-block;
-            margin-right: 5px;
-            margin-bottom: 5px;
+            margin-right: 0.3125rem; /* 5px */
+            margin-bottom: 0.3125rem; /* 5px */
             line-height: 1.5;
             text-decoration: none;
-            margin-top: 50px;
-            letter-spacing: 2px;
-            border: 2px solid rgba(255, 255, 255, .2);
+            margin-top: 3.125rem; /* 50px */
+            letter-spacing: 0.125rem; /* 2px */
+            border: 0.125rem solid rgba(255, 255, 255, .2); /* 2px */
         }
+
         /* style button hover effect */
         a.more-link:hover {
             color: #d2003c;
         }
 
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 48rem) { /* 768px */
             .error-container {
-                /* Reduce the massive font size for small screens */
-                font-size: 100px;
-                margin: 10px 10px; /* Reduce margin */
+                font-size: 6.25rem; /* 100px */
+                margin: 0.625rem 0.625rem; /* 10px */
             }
 
             /* Target the central circular '0' to reduce its size */
             .error-container > span:nth-of-type(2) {
-                width: 70px; /* Reduced width */
-                height: 70px; /* Reduced height */
+                width: 4.375rem; /* 70px */
+                height: 4.375rem; /* 70px */
             }
 
             /* Target the pseudo-elements for the '0' to reduce the shadow offsets */
             .error-container > span:nth-of-type(2):before,
             .error-container > span:nth-of-type(2):after {
                 box-shadow:
-                        inset 15px 0 0 rgba(0, 60, 210, 0.4), /* Halved the offset (30px -> 15px) */
-                        inset 0 15px 0 rgba(210, 147, 0, 0.4),
-                        inset -15px 0 0 rgba(0, 210, 147, 0.4),
-                        inset 0 -15px 0 rgba(210, 0, 60, 0.6);
+                        inset 0.9375rem 0 0 rgba(0, 60, 210, 0.4), /* 15px */
+                        inset 0 0.9375rem 0 rgba(210, 147, 0, 0.4),
+                        inset -0.9375rem 0 0 rgba(0, 210, 147, 0.4),
+                        inset 0 -0.9375rem 0 rgba(210, 0, 60, 0.6);
             }
+
             /* Also scale down the main heading */
             h1 {
-                font-size: 1.5rem; /* Or an absolute value like 24px */
+                font-size: 1.5rem; /* 24px */
             }
 
             .zoom-area {
-                font-size: 16px;
+                font-size: 1rem; /* 16px */
             }
         }
     </style>
