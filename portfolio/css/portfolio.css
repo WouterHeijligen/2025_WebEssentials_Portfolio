@@ -116,6 +116,7 @@ body {
         padding: 1.25rem 4%;
     }
     .navbar {
+        position: fixed;
         top: 100%;
         left: 0;
         width: 100%;
