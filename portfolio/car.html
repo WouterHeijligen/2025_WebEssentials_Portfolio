@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96" >
+    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" >
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico" >
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" >
+    <link rel="manifest" href="assets/favicon/site.webmanifest" >
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <!-- Eigen CSS -->
+    <link rel="stylesheet" href="css/portfolio.css">
+    <!-- Icons CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <title>Home</title>
+</head>
+<body>
+    <main>
+        <div class="container-fluid" id="navigation">
+            <header class="header">
+                <a href="#" class="logo">Apex Velocity Racing</a>
+                <!-- Mobile device menu icon, will be hidden on large screens -->
+                <!-- Workaround for no javascript coding to display menu after clicking mobile icon -->
+                <input type="checkbox" id="check">
+                <!-- Mobile device menu icon -->
+                <label for="check" class="icons">
+                    <img src="assets/mobile-menu-icon.png" alt="Menu Icon" id="menu-icon">
+                </label>
+                <nav class="navbar">
+                    <a href="index.html">Home</a>
+                    <a href="team.html">Team</a>
+                    <a href="drivers.html">Drivers</a>
+                    <a href="car.html">Car & Tech</a>
+                    <a href="news.html">News</a>
+                </nav>
+            </header>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="container-fluid section text-center hero-section">
+            <h1>Car & Tech</h1>
+            <p>Explore the engineering excellence behind Apex Velocity Racing</p>
+        </div>
+
+
+        <!-- Engine Section -->
+        <div class="container section text-center my-4">
+            <img src="assets/car-engine.webp" alt="AVR Car 1" class="car-img">
+        </div>
+
+        <!-- Engine Statistics -->
+        <div class="container section my-4">
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col">
+                    <div class="card h-100 p-3 stats-box">
+                        <h3 class="mb-3"><i class="fas fa-cogs"></i> Engine Specifications</h3>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-bolt"></i> Type: 1.6L V6 Turbo Hybrid</li>
+                            <li><i class="fas fa-tachometer-alt"></i> Power Output: 1000+ HP</li>
+                            <li><i class="fas fa-sync-alt"></i> RPM Limit: 15,000</li>
+                            <li><i class="fas fa-battery-half"></i> ERS Deployment: 160 HP boost</li>
+                            <li><i class="fas fa-gas-pump"></i> Fuel Efficiency: 35% thermal efficiency</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 p-3 stats-box">
+                        <h3 class="mb-3"><i class="fas fa-tachometer-alt"></i> Performance Metrics</h3>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-stopwatch"></i> 0–100 km/h: 2.5 seconds</li>
+                            <li><i class="fas fa-road"></i> Top Speed: 360 km/h</li>
+                            <li><i class="fas fa-wind"></i> Downforce: 5,000 N at 250 km/h</li>
+                            <li><i class="fas fa-weight-hanging"></i> Weight: 798 kg (including driver)</li>
+                            <li><i class="fas fa-car-crash"></i> Braking Distance: 100–0 km/h in 2.8 seconds</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rear View Image -->
+        <div class="container section text-center my-4">
+            <img src="assets/car-angled-rear-view-light.webp" alt="AVR Car Rear View" class="img-fluid car-img my-4">
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col">
+                    <div class="card h-100 p-3 stats-box">
+                        <h3><i class="fas fa-car"></i> Chassis & Aerodynamics</h3>
+                        <p><i class="fas fa-feather"></i> Constructed from carbon fiber composites, the AVR chassis balances rigidity with lightweight efficiency. The aerodynamic package includes a multi‑element front wing, sculpted sidepods, and a high‑downforce rear wing designed for maximum cornering grip.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 p-3 stats-box">
+                        <h3><i class="fas fa-microchip"></i> Technology & Innovation</h3>
+                        <p><i class="fas fa-satellite-dish"></i> The car integrates advanced telemetry systems, hybrid energy recovery, and adaptive suspension. Real‑time data streams allow engineers to fine‑tune performance during races, while the hybrid system ensures both speed and sustainability.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer class="footer">
+        <div class="row">
+            <p>© 2025 Wouter Heijligen</p>
+        </div>
+    </footer>
+</body>
+</html>
