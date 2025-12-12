@@ -1,11 +1,11 @@
-/* set universal css for pages */
+/* Universal styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* line-height is unitless and typically not converted */
     line-height: 1.618;
     font-family: "Roboto Light", Calibri, sans-serif;
+    color: #fff;
 }
 
 /* set body properties */
@@ -14,130 +14,213 @@ body {
     background-size: cover;
     background-position: center;
     background-color: #00162b;
+    overflow-x: hidden;
 }
 
-/* header properties, set background etc for a modern navbar display */
+/* Header - Mobile default */
 .header {
     position: absolute;
-    /* 100px / 16 = 6.25rem */
-    margin: 6.25rem 5%;
     top: 0;
     left: 0;
     width: 90%;
-    /* 20px / 16 = 1.25rem; 100px / 16 = 6.25rem */
-    padding: 1.25rem 6.25rem;
+    margin: 1rem 5%;
+    padding: 1rem 4%;
     background: rgba(255, 255, 255, .1);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* Kept in px for blur radius */
     backdrop-filter: blur(10px);
-    /* Kept in px for border thickness */
     border: 2px solid rgba(255, 255, 255, .05);
-    /* 15px / 16 = 0.9375rem */
     border-radius: 0.9375rem;
 }
 
-/* set properties for white logo */
+/* Logo */
 .logo {
     color: #fff;
     /* 30px / 16 = 1.875rem */
-    font-size: 1.875rem;
+    font-size: 1.5rem;
     text-decoration: none;
     font-weight: 600;
     cursor: default;
+    white-space: nowrap;   /* keep text on one line */
 }
 
-/* set properties for links in navbar */
+/* Navbar links - Mobile default */
 .navbar a {
+    display: block;
+    font-size: 1.125rem;
+    margin: 1.5rem 0;
     color: #fff;
-    font-size: 1.5rem;
     text-decoration: none;
-    margin-left: 2.1rem;
     transition: .5s;
 }
 
-/* change text color on menu hovering */
 .navbar a:hover {
-    color: rgba(210, 0, 60, 0.8);
+    color: rgba(255, 106, 0, 0.8);
 }
 
-/* set main-content properties */
-.main-content {
-    /* 50px / 16 = 3.125rem */
-    padding-top: 3.125rem;
+/* Mobile menu icon visible by default */
+#menu-icon {
+    width: 2.25rem;
+    height: 2.25rem;
     color: #fff;
+    display: block;
+    cursor: pointer;
 }
 
-.row {
-    background: rgba(210, 0, 60, 0.8);
-    padding: 7.5rem 5% 7.5rem 5%;
-}
-
-#navigation {
-    background-image: url(../assets/top-banner.webp);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    /* 800px / 16 = 50rem */
-    height: 50rem;
-}
-
-/* Hide the actual checkbox input completely */
+/* Hide checkbox */
 #check {
     display: none;
 }
 
-/* mobile menu icon style, hide on large screens */
-#menu-icon {
-    /* 36px / 16 = 2.25rem */
-    width: 2.25rem;
-    height: 2.25rem;
-    vertical-align: middle;
-    color: #fff;
+/* Navbar hidden by default on mobile */
+.navbar {
+    position: fixed;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: .5rem 4%;
+    background-color: rgba(0, 22, 43, 0.9);
+    border: 2px solid rgba(255, 255, 255, .05);
     display: none;
-    cursor: pointer;
 }
 
-/* change menu padding for in between screen sizes */
-@media (max-width: 1280px) {
+/* Show navbar when checkbox checked */
+#check:checked ~ .navbar {
+    display: block;
+}
+
+/* Hero section */
+.hero-section {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 4px solid rgba(255, 106, 0, 0.6);
+}
+
+.hero-section h1 {
+    font-size: 2.5rem;
+    color: #ff6a00;
+}
+
+/* Driver page */
+.driver-img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+.driver-bio h2 {
+    color: #ff6a00;
+    margin-bottom: 1rem;
+}
+
+.driver-bio p, .driver-bio li {
+    color: #ccc;
+    font-size: 0.95rem;
+}
+
+.driver-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.driver-row {
+    margin-bottom: 2rem;
+}
+
+/* Car page */
+.gallery-img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.stats-box {
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.stats-box h3 {
+    color: #ff6a00;
+    margin-bottom: 1rem;
+}
+
+.stats-box p, .stats-box li {
+    color: #ccc;
+    font-size: 0.95rem;
+}
+
+/* Navigation banner */
+#navigation {
+    background-image: url(../assets/website-banner-night.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    min-height: 9rem;
+    margin-bottom: 2rem;
+}
+
+/* -------------------- MEDIA QUERIES -------------------- */
+
+/* Tablet and up (≥ 768px) */
+@media (min-width: 768px) {
     .header {
-        /* 20px / 16 = 1.25rem; 50px / 16 = 3.125rem */
+        display: flex;
         padding: 1.25rem 3.125rem;
     }
-}
-/* change menu layout for smartphone screens */
-@media (max-width: 905px) {
     #menu-icon {
-        display: block;
+        display: none; /* Hide menu icon on tablet+ */
     }
-    .header{
-        /* 20px / 16 = 1.25rem; */
-        padding: 1.25rem 4%;
-    }
+
     .navbar {
-        position: fixed;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        padding: .5rem 4%;
-        background: rgba(255, 255, 255, .1);
-        /* Kept in px for border thickness */
-        border-bottom: 2px solid rgba(255, 255, 255, .2);
-        /* HIDE the navbar by default on mobile */
-        display: none;
+        position: static;
+        display: flex;
+        justify-content: flex-end;
+        background: transparent;
+        border: none;
+        padding: 0;
     }
-
     .navbar a {
-        display: block;
-        /* 18px / 16 = 1.125rem */
-        font-size: 1.125rem;
-        margin: 1.5rem 0;
+        display: inline-block;
+        font-size: 1.5rem;
+        margin-left: 2.1rem;
+        margin-top: 0;
+        margin-bottom: 0;
     }
-
-    /* THE MAGIC: When #check is checked, find the sibling .navbar and display it */
-    #check:checked ~ .navbar {
-        display: block;
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+    #navigation {
+        min-height: 20rem;
     }
 }
 
+/* Desktop and up (≥ 992px) */
+@media (min-width: 992px) {
+    .header {
+        margin: 6.25rem 5%;
+        padding: 1.25rem 6.25rem;
+    }
+    .hero-section h1 {
+        font-size: 4rem;
+    }
+    #navigation {
+        min-height: 45rem;
+    }
+}
+
+/* Extra large screens (≥ 1400px) */
+@media (min-width: 1400px) {
+    .driver-img {
+        max-width: 600px;
+    }
+    .driver-bio {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}
