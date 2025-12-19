@@ -242,6 +242,24 @@ input[name="gallery"] {
     border-color:rgba(255, 106, 0, 0.6);
     transform: scale(0.95);
 }
+/* Footer base */
+.footer {
+    background: rgba(255, 255, 255, 0.05); /* subtle translucent panel like your stats boxes */
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin-top: 2rem;
+}
+
+/* Footer text */
+.footer-text {
+    color: rgba(255, 106, 0, 0.6);
+    font-size: 0.95rem;
+    font-weight: 600; /* slightly bold for legibility */
+}
+
+/* Back-to-top button */
+.back-to-top {
+    color: rgba(255, 106, 0, 0.6);
+}
 
 /* Navigation banner */
 #navigation {
