@@ -31,7 +31,7 @@ body {
     align-items: center;
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255, 255, 255, .05);
-    border-radius: 0.9375rem;
+    border-radius: 0.2rem;
 }
 
 /* Logo */
@@ -43,6 +43,19 @@ body {
     font-weight: 600;
     cursor: default;
     white-space: nowrap;   /* keep text on one line */
+}
+
+/* Navbar hidden by default on mobile */
+.navbar {
+    position: fixed;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: .5rem 4%;
+    background-color: rgba(0, 22, 43, 0.9);
+    border: 2px solid rgba(255, 255, 255, .05);
+    display: none;
+    font-weight: bold;
 }
 
 /* Navbar links - Mobile default */
@@ -70,18 +83,6 @@ body {
 
 /* Hide checkbox */
 #check {
-    display: none;
-}
-
-/* Navbar hidden by default on mobile */
-.navbar {
-    position: fixed;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    padding: .5rem 4%;
-    background-color: rgba(0, 22, 43, 0.9);
-    border: 2px solid rgba(255, 255, 255, .05);
     display: none;
 }
 
@@ -131,7 +132,7 @@ body {
 }
 
 /* Car page */
-.gallery-img {
+.car-img {
     width: 100%;
     border-radius: 8px;
     margin-bottom: 20px;
@@ -260,6 +261,7 @@ input[name="gallery"] {
     .header {
         display: flex;
         padding: 1.25rem 3.125rem;
+        border-radius: 0.9375rem;
     }
     #menu-icon {
         display: none; /* Hide menu icon on tablet+ */
