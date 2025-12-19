@@ -9,7 +9,6 @@
     <link rel="shortcut icon" href="assets/favicon/favicon.ico" >
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" >
     <link rel="manifest" href="assets/favicon/site.webmanifest" >
-    <link rel="icon" type="image/x-icon" href="assets/website-icon.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
@@ -45,43 +44,76 @@
         </div>
 
         <!-- Car Gallery -->
-        <div class="container-fluid section">
-            <div class="row">
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <img src="assets/celebration-scene.webp" alt="Celebrations" class="gallery-img">
+        <div class="container my-5">
+            <div class="gallery-wrapper">
+                <!-- Radio Inputs (Hidden) -->
+                <input type="radio" name="gallery" id="img-1" checked>
+                <input type="radio" name="gallery" id="img-2">
+                <input type="radio" name="gallery" id="img-3">
+                <input type="radio" name="gallery" id="img-4">
+                <input type="radio" name="gallery" id="img-5">
+                <input type="radio" name="gallery" id="img-6">
+                <input type="radio" name="gallery" id="img-7">
+                <input type="radio" name="gallery" id="img-8">
+                <input type="radio" name="gallery" id="img-9">
+                <input type="radio" name="gallery" id="img-10">
+                <input type="radio" name="gallery" id="img-11">
+                <input type="radio" name="gallery" id="img-12">
+
+                <!-- Main Picture Area -->
+                <div class="main-display mb-4">
+                    <img src="assets/celebration-scene.webp" alt="Celebrations" class="img-1-view">
+                    <img src="assets/championship.webp" alt="World champion!" class="img-2-view">
+                    <img src="assets/finish-line-scene.webp" alt="Finish line scene" class="img-3-view">
+                    <img src="assets/pit-garage.webp" alt="Pit garage" class="img-4-view">
+                    <img src="assets/racing-picture-sunny.webp" alt="Circuit racing scene" class="img-5-view">
+                    <img src="assets/car-top-view-garage.webp" alt="AVR Car design" class="img-6-view">
+                    <img src="assets/car-angled-front-view.webp" alt="Angled front view" class="img-7-view">
+                    <img src="assets/car-front-view.webp" alt="Front view" class="img-8-view">
+                    <img src="assets/car-side-view.webp" alt="Side view" class="img-9-view">
+                    <img src="assets/car-top-rear-view.webp" alt="Top rear view" class="img-10-view">
+                    <img src="assets/car-rear-angled-view.webp" alt="Angled rear view" class="img-11-view">
+                    <img src="assets/car-angled-front-view-2.webp" alt="Angled Front view" class="img-12-view">
                 </div>
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <img src="assets/championship.webp" alt="World champion!" class="gallery-img">
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <img src="assets/finish-line-scene.webp" alt="Finish line scene" class="gallery-img">
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <img src="assets/pit-garage.webp" alt="Pit garage" class="gallery-img">
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <img src="assets/racing-picture-sunny.webp" alt="Circuit racing scene" class="gallery-img">
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <img src="assets/car-top-view-garage.webp" alt="AVR Car design" class="gallery-img">
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <img src="assets/car-angled-front-view.webp" alt="Angled front view" class="gallery-img">
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <img src="assets/car-front-view.webp" alt="Front view" class="gallery-img">
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <img src="assets/car-side-view.webp" alt="Side view" class="gallery-img">
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <img src="assets/car-top-rear-view.webp" alt="Top rear view" class="gallery-img">
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <img src="assets/car-rear-angled-view.webp" alt="Angled rear view" class="gallery-img">
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <img src="assets/car-angled-front-view-2.webp" alt="Angled Front view" class="gallery-img">
+
+                <!-- Thumbnail Grid by using a flexbox with centered content -->
+                <div class="d-flex flex-wrap justify-content-center thumbnail-grid">
+                    <label for="img-1" class="me-2">
+                        <img src="assets/celebration-scene.webp" alt="Celebrations" class="thumb">
+                    </label>
+                    <label for="img-2" class="me-2">
+                        <img src="assets/championship.webp" alt="World champion!" class="thumb">
+                    </label>
+                    <label for="img-3" class="me-2">
+                        <img src="assets/finish-line-scene.webp" alt="Finish line scene" class="thumb">
+                    </label>
+                    <label for="img-4" class="me-2">
+                        <img src="assets/pit-garage.webp" alt="Pit garage" class="thumb">
+                    </label>
+                    <label for="img-5" class="me-2">
+                        <img src="assets/racing-picture-sunny.webp" alt="Circuit racing scene" class="thumb">
+                    </label>
+                    <label for="img-6" class="me-2">
+                        <img src="assets/car-top-view-garage.webp" alt="AVR Car design" class="thumb">
+                    </label>
+                    <label for="img-7" class="me-2">
+                        <img src="assets/car-angled-front-view.webp" alt="Angled front view" class="thumb">
+                    </label>
+                    <label for="img-8" class="me-2">
+                        <img src="assets/car-front-view.webp" alt="Front view" class="thumb">
+                    </label>
+                    <label for="img-9" class="me-2">
+                        <img src="assets/car-side-view.webp" alt="Side view" class="thumb">
+                    </label>
+                    <label for="img-10" class="me-2">
+                        <img src="assets/car-top-rear-view.webp" alt="Top rear view" class="thumb">
+                    </label>
+                    <label for="img-11" class="me-2">
+                        <img src="assets/car-rear-angled-view.webp" alt="Angled rear view" class="thumb">
+                    </label>
+                    <label for="img-12" class="me-2">
+                        <img src="assets/car-angled-front-view-2.webp" alt="Angled Front view" class="thumb">
+                    </label>
                 </div>
             </div>
         </div>

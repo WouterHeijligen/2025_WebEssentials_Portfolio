@@ -154,6 +154,94 @@ body {
     font-size: 0.95rem;
 }
 
+/* Gallery page */
+/* Hide the radio buttons (used as checkbox for changing the main picture) */
+input[name="gallery"] {
+    display: none;
+}
+
+/* Main Display Styling - Dynamic Height */
+.main-display {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0.6rem;
+    background: rgba(0,0,0,0.2);
+}
+
+.main-display img {
+    grid-area: 1 / 1 / 2 / 2; /* Stack all images on top of each other in the same cell */
+    width: 100%;
+    height: auto;           /* Allow height to be natural */
+    object-fit: contain;    /* Ensure the whole image is visible */
+    opacity: 0;
+    pointer-events: none;   /* Prevent hidden images from being clickable */
+    transition: opacity 1.5s ease-in-out; /* Transition animation */
+}
+
+/* Toggle Visibility based on Radio Selection */
+#img-1:checked ~ .main-display .img-1-view,
+#img-2:checked ~ .main-display .img-2-view,
+#img-3:checked ~ .main-display .img-3-view,
+#img-4:checked ~ .main-display .img-4-view,
+#img-5:checked ~ .main-display .img-5-view,
+#img-6:checked ~ .main-display .img-6-view,
+#img-7:checked ~ .main-display .img-7-view,
+#img-8:checked ~ .main-display .img-8-view,
+#img-9:checked ~ .main-display .img-9-view,
+#img-10:checked ~ .main-display .img-10-view,
+#img-11:checked ~ .main-display .img-11-view,
+#img-12:checked ~ .main-display .img-12-view {
+    opacity: 1;
+    z-index: 1;
+    pointer-events: auto;
+}
+
+/* Thumbnail Grid Layout (No scrollbar, multi-row) */
+.thumbnail-grid {
+    gap: 0.3rem; /* Space between thumbnails */
+    overflow: visible; /* Remove scroll constraints */
+}
+
+.thumbnail-grid label {
+    cursor: pointer;
+    /* On mobile, thumbnails will grow to fill space if needed,
+       but we set a base width of 100px */
+    flex: 0 1 100px;
+}
+
+.thumb {
+    width: 100%; /* Fill the label width */
+    height: 4rem;
+    object-fit: cover;
+    border-radius: 0.4rem;
+    border: 2px solid transparent;
+    transition: border-color 0.5s, opacity 0.2s;
+}
+
+/* Thumbnail hover effect */
+.thumb:hover {
+    opacity: 0.6;
+}
+
+/* Thumbnail Highlighting (One for each) */
+#img-1:checked ~ .thumbnail-grid label[for="img-1"] img,
+#img-2:checked ~ .thumbnail-grid label[for="img-2"] img,
+#img-3:checked ~ .thumbnail-grid label[for="img-3"] img,
+#img-4:checked ~ .thumbnail-grid label[for="img-4"] img,
+#img-5:checked ~ .thumbnail-grid label[for="img-5"] img,
+#img-6:checked ~ .thumbnail-grid label[for="img-6"] img,
+#img-7:checked ~ .thumbnail-grid label[for="img-7"] img,
+#img-8:checked ~ .thumbnail-grid label[for="img-8"] img,
+#img-9:checked ~ .thumbnail-grid label[for="img-9"] img,
+#img-10:checked ~ .thumbnail-grid label[for="img-10"] img,
+#img-11:checked ~ .thumbnail-grid label[for="img-11"] img,
+#img-12:checked ~ .thumbnail-grid label[for="img-12"] img {
+    border-color:rgba(255, 106, 0, 0.6);
+    transform: scale(0.95);
+}
+
 /* Navigation banner */
 #navigation {
     background-image: url(../assets/website-banner-night.webp);
