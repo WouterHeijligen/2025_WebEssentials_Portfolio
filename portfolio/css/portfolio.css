@@ -155,6 +155,16 @@ body {
     font-size: 0.95rem;
 }
 
+/* remove default bullets */
+.stats-box ul {
+    list-style: none;
+}
+
+/* remove padding */
+.engine ul {
+    padding: 0;
+}
+
 /* Gallery page */
 /* Hide the radio buttons (used as checkbox for changing the main picture) */
 input[name="gallery"] {
