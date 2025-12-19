@@ -1,20 +1,20 @@
 /* Universal styles */
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
-    line-height: 1.618;
     font-family: "Roboto Light", Calibri, sans-serif;
-    color: #fff;
+}
+
+html{
+    line-height: 1.618;
 }
 
 /* set body properties */
 body {
+    color: #fff;
     min-height: 100vh;
     background-size: cover;
     background-position: center;
     background-color: #00162b;
-    overflow-x: hidden;
 }
 
 /* Header - Mobile default */
@@ -108,7 +108,6 @@ body {
 .driver-img {
     width: 100%;
     max-width: 300px;
-    border-radius: 10px;
 }
 
 .driver-bio h2 {
@@ -117,7 +116,6 @@ body {
 }
 
 .driver-bio p, .driver-bio li {
-    color: #ccc;
     font-size: 0.95rem;
 }
 
@@ -134,15 +132,16 @@ body {
 /* Car page */
 .car-img {
     width: 100%;
-    border-radius: 8px;
-    margin-bottom: 20px;
+    border-radius: 0.5rem;
+    margin-bottom: 1.2rem;
 }
 
 .stats-box {
     background: rgba(255,255,255,0.05);
-    border-radius: 10px;
-    padding: 16px;
-    margin-bottom: 16px;
+    border-radius: 0.6rem;
+    color: #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
 }
 
 .stats-box h3 {
@@ -151,7 +150,6 @@ body {
 }
 
 .stats-box p, .stats-box li {
-    color: #ccc;
     font-size: 0.95rem;
 }
 
@@ -277,7 +275,7 @@ input[name="gallery"] {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    width: 100vw;
+    width: 100%;
     min-height: 9rem;
     margin-bottom: 2rem;
 }
