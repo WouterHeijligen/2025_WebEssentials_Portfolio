@@ -1,4 +1,11 @@
 /* Universal styles */
+:root{
+    --accent:#ff6a00;
+    --panel-bg:rgba(255,255,255,.05);
+    --panel-border:rgba(255,255,255,.08);
+    --text-dim:rgba(255,255,255,.6);
+}
+
 * {
     box-sizing: border-box;
     font-family: "Roboto Light", Calibri, sans-serif;
@@ -104,88 +111,169 @@ body {
     color: #ff6a00;
 }
 
-/* Team page */
-.text-accent { color: #ff6a00; }
-
-/* Section heading underline (aligns with .hero-section border) */
-.section-title {
-    border-bottom: 4px solid rgba(255,106,0,0.6);
-    padding-bottom: .4rem;
+/* Home and team page*/
+.img-fluid{
+    max-width:100%;
+    height:auto;
+    display:block;
 }
 
-/* Card shell: translucent panel echoing your .stats-box / .footer */
-.team-card {
-    background: rgba(255,255,255,0.05);
-    border: 2px solid rgba(255,255,255,0.08);
-    border-radius: .6rem;
-    display: flex;
-    flex-direction: column;
-    transition: transform .25s ease, border-color .25s ease, box-shadow .3s ease;
+.text-dim{
+    color:var(--text-dim);
 }
 
-.team-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(255,106,0,0.35);
-    box-shadow: 0 10px 24px rgba(0,0,0,.25);
+.heading-strong{
+    font-weight:700;
 }
 
-/* Thumbnail ratios (CSS-only stand-ins for Bootstrap's ratio, since we only loaded grid) */
-.ratio-4x3 {
-    position: relative;
-    width: 100%;
-    border-top-left-radius: .6rem;
-    border-top-right-radius: .6rem;
-    overflow: hidden;
+.section{
+    margin-bottom:2rem;
 }
 
-.ratio-1x1 {
-    position: relative;
-    width: 100%;
-    border-top-left-radius: .6rem;
-    border-top-right-radius: .6rem;
-    overflow: hidden;
+.btn{
+    display:inline-block;
+    padding:.55rem 1rem;
+    border-radius:.4rem;
+    font-weight:600;
+    line-height:1;
+    text-decoration:none;
+    transition:all .25s ease;
 }
 
-.team-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;              /* keep the card fully filled */
-    display: block;
+.btn--accent{
+    color:#00162b;
+    background:var(--accent);
+    border:2px solid var(--accent);
 }
 
-/* Body area */
-.team-body { color: #ddd; }
-
-/* Details/summary (native, accessible, no JS) */
-.team-details {
-    border-top: 1px solid rgba(255,255,255,0.08);
-    padding-top: .5rem;
+.btn--accent:hover{
+    background:#ff7f22;
+    border-color:#ff7f22;
 }
 
-.summary-link {
-    color: rgba(255,106,0,0.85);
-    cursor: pointer;
-    font-weight: 600;
+.btn--outline{
+    color:var(--accent);
+    border:2px solid rgba(255,106,0,.6);
+    background:rgba(255,106,0,.12);
 }
 
-.summary-link::after {
-    content: " ▼";
-    font-size: .85em;
-    color: rgba(255,106,0,0.6);
+.btn--outline:hover{
+    background:rgba(255,106,0,.25);
+    border-color:var(--accent);
 }
 
-details[open] .summary-link::after { content: " ▲"; }
+.card{
+    background:var(--panel-bg);
+    border:2px solid var(--panel-border);
+    border-radius:.6rem;
+    overflow:hidden;
+    display:flex;flex-direction:column;height:100%;
+    transition:transform .25s,border-color .25s,box-shadow .3s;
+    margin-bottom:1rem;
+}
 
-/* Compact roster chips */
-.team-chip {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.08);
-    color: #ddd;
-    padding: .45rem .8rem;
-    margin-right: 1rem;
-    border-radius: 999px;
-    font-size: .875rem;
-    white-space: nowrap;
+.card:hover{
+    transform:translateY(-4px);
+    border-color:rgba(255,106,0,.35);
+    box-shadow:0 10px 24px rgba(0,0,0,.25);
+}
+
+.card-title{
+    margin:0 0 .35rem;
+}
+
+.card-thumb{
+    position:relative;
+    width:100%;
+    overflow:hidden;
+    border-top-left-radius:.6rem;
+    border-top-right-radius:.6rem;
+}
+
+.aspect--portrait{
+    aspect-ratio:2/3;
+}
+
+.aspect--landscape{
+    aspect-ratio:16/9;
+}
+
+.aspect--4x3{
+    aspect-ratio:4/3;
+}
+
+.aspect--square{
+    aspect-ratio:1/1;
+}
+
+.card-thumb img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:50% 12%;
+}
+
+.focus-top{
+    object-position:50% 8% !important;
+}
+
+.focus-lower{
+    object-position:50% 25% !important;
+}
+
+.card-body{
+    color:#ddd;
+    padding:.75rem .9rem 1rem;
+}
+
+.details-panel{
+    background:var(--panel-bg);
+    border:2px solid var(--panel-border);
+    border-radius:.6rem;
+    padding:.75rem 1rem;
+}
+
+.summary-link{
+    color:rgba(255,106,0,.85);
+    cursor:pointer;
+    font-weight:600;
+}
+
+.summary-link::after{
+    font-size:.85em;
+    color:rgba(255,106,0,.6);
+}
+
+.section-title{
+    border-bottom:4px solid rgba(255,106,0,.6);
+    padding-bottom:.4rem;
+}
+
+.chip{
+    background: var(--panel-bg);
+    border:1px solid var(--panel-border);
+    color:#ddd;
+    padding:.45rem .8rem;
+    border-radius:999px;
+    font-size:.875rem;
+    white-space:nowrap;
+    margin-right:1rem;
+}
+
+.gallery-card{
+    background:var(--panel-bg);
+    border:2px solid var(--panel-border);
+    border-radius:.6rem;
+    overflow:hidden;
+    margin:0;
+}
+
+.gallery-card img{
+    width:100%;
+    height:100%;
+    aspect-ratio:4/3;
+    object-fit:cover;
+    display:block;
 }
 
 /* Driver page */
@@ -398,6 +486,13 @@ input[name="gallery"] {
     #navigation {
         min-height: 20rem;
     }
+
+    /* Home page */
+    .card-body{
+        padding:1rem 1.1rem 1.25rem;}
+    .card-thumb img{
+        object-position:50% 14%;
+    }
 }
 
 /* Desktop and up (≥ 992px) */
@@ -411,6 +506,13 @@ input[name="gallery"] {
     }
     #navigation {
         min-height: 45rem;
+    }
+
+    /* Home page */
+    .card{
+        margin-bottom:1.25rem;}
+    .card-thumb img{
+        object-position:50% 15%;
     }
 }
 
@@ -426,5 +528,13 @@ input[name="gallery"] {
     .team-body {
         padding-left: .25rem;
         padding-right: .25rem;
+    }
+
+    /* Home page */
+    .card-body{
+        padding:1.25rem 1.5rem 1.5rem;
+    }
+    .card-thumb img{
+        object-position:50% 16%;
     }
 }

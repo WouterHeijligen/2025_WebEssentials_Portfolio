@@ -36,25 +36,159 @@
             </nav>
         </header>
     </div>
-    <main class="main-content">
-        <div>
-            <section>
-                <div class="row">
-                    <div class="col">One-Third</div>
-                    <div class="col">One-Third</div>
-                    <div class="col">One-Third</div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6 col-md-5 col-lg-4">Small Column</div>
-                    <div class="col-sm-6 col-md-7 col-lg-8">Large Column</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">Column 1</div>
-                    <div class="col-md-6">Column 2</div>
-                </div>
-            </section>
+    <main class="container my-5">
+        <!-- Hero Section -->
+        <div class="container-fluid section text-center hero-section">
+            <h1>Apex Velocity racing</h1>
+            <p>Explore the story behind Apex Velocity Racing</p>
         </div>
+
+        <!-- Featured -->
+        <section class="section">
+            <h2 class="section-title heading-strong">Featured</h2>
+
+            <div class="row">
+                <!-- Team -->
+                <div class="col-12 col-lg-4">
+                    <article class="card">
+                        <div class="card-thumb landscape">
+                            <img class="img-fluid" src="assets/pit-garage.webp" alt="Driver lineup">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title text-accent">Team</h3>
+                            <p class="text-dim">Leadership, engineering, and operations working as one.</p>
+                            <a class="btn btn--outline" href="team.html">Explore Team</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Drivers -->
+                <div class="col-12 col-lg-4">
+                    <article class="card">
+                        <div class="card-thumb landscape">
+                            <img class="img-fluid" src="assets/Driver-Lineup.webp" alt="Drivers">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title text-accent">Drivers</h3>
+                            <p class="text-dim">Racecraft, consistency, and championship mentality.</p>
+                            <a class="btn btn--outline" href="drivers.html">Explore Drivers</a>
+                        </div>
+                    </article>
+                </div>
+
+               <!-- Car & Tech -->
+                <div class="col-12 col-lg-4">
+                    <article class="card">
+                        <div class="card-thumb landscape">
+                            <img class="img-fluid" src="assets/car-top-view-garage.webp" alt="racing scene">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title text-accent">Car &amp; Tech</h3>
+                            <p class="text-dim">Hybrid power, aero efficiency, and actionable telemetry.</p>
+                            <a class="btn btn--outline" href="car.html">Explore Car & Tech</a>
+                        </div>
+                    </article>
+               </div>
+            </div>
+        </section>
+
+        <!-- Highlights -->
+        <section class="section">
+            <h2 class="section-title heading-strong">Highlights</h2>
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="stats-box h-100">
+                        <h3>Race Wins</h3>
+                        <p>Multiple victories across mixed conditions and circuit profiles.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="stats-box h-100">
+                        <h3>Fast Pit Stops</h3>
+                        <p>Sub‑2s consistency with drill cycles and clean choreography.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="stats-box h-100">
+                        <h3>Upgrade Cadence</h3>
+                        <p>Correlation‑driven packages aligned to aero sensitivity and reliability.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="section">
+            <h2 class="section-title heading-strong">About AVR</h2>
+                <p class="text-dim">
+                    Apex Velocity Racing integrates engineering rigor with decisive race strategy.
+                    Our culture values transparent debriefs, repeatable processes, and continuous improvement.
+                </p>
+                <p class="text-dim">
+                    From CFD and wind tunnel correlation to pit crew drills and telemetry pipelines,
+                    every domain operates on evidence, collaboration, and execution.
+                </p>
+            <details class="details-panel">
+                <summary class="summary-link">Read more</summary>
+                <div class="mt-2">
+                    <p class="text-dim">
+                        At Apex Velocity Racing, we turn complexity into advantage. Our workflow connects simulation,
+                        design, manufacturing, and trackside operations into one loop: insights from telemetry and
+                        driver feedback inform setup hypotheses, which are validated in practice and rolled back into
+                        development with clear owners and deadlines.
+                    </p>
+                    <p class="text-dim">
+                        We organize around small, accountable squads—strategy, aero, chassis, data, and pit crew—so
+                        decisions happen fast and failure modes are caught early. Post‑session debriefs are candid and
+                        structured; we celebrate learning as much as results, because reliability and consistency are
+                        performance multipliers over a long season.
+                    </p>
+                    <p class="text-dim">
+                        Our culture is hands‑on and human. We invest in cross‑training, safety, and well‑being,
+                        knowing that a confident, rested crew executes cleaner stops, sharper calls, and better
+                        engineering judgment. Continuous improvement isn’t a slogan—it’s the way we practice.
+                    </p>
+                    <ul class="text-dim">
+                        <li><strong>Data‑first decisions:</strong> clean telemetry pipelines, sanity checks, and dashboards tailored for rapid calls.</li>
+                        <li><strong>Correlation focus:</strong> CFD → wind tunnel → track validation to ensure upgrades deliver when it counts.</li>
+                        <li><strong>Operational excellence:</strong> drill cycles that target consistency first, absolute speed second.</li>
+                        <li><strong>Reliability as performance:</strong> robust parts, repeatable processes, and fewer DNFs translate to more points.</li>
+                        <li><strong>People &amp; culture:</strong> psychological safety, clear roles, and transparent ownership of actions.</li>
+                        <li><strong>Sustainability mindset:</strong> smart freight planning, efficient manufacturing, and waste‑reduction initiatives.</li>
+                    </ul>
+                </div>
+            </details>
+        </section>
+
+        <!-- Gallery teaser -->
+        <section class="section">
+            <h2 class="section-title heading-strong">Gallery</h2>
+            <div class="row">
+                <div class="col-6 col-lg-3">
+                    <figure class="gallery-card">
+                        <img class="img-fluid" src="assets/racing-picture-sunny.webp" alt="Championship moment">
+                    </figure>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <figure class="gallery-card">
+                        <img class="img-fluid" src="assets/car-top-view-garage.webp" alt="Championship moment">
+                    </figure>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <figure class="gallery-card">
+                        <img class="img-fluid" src="assets/finish-line-scene.webp" alt="Championship moment">
+                    </figure>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <figure class="gallery-card">
+                        <img class="img-fluid" src="assets/championship.webp" alt="Championship moment">
+                    </figure>
+                </div>
+            </div>
+        </section>
     </main>
+
+
     <footer class="footer py-3">
         <div class="container">
             <div class="row align-items-center">
