@@ -104,6 +104,90 @@ body {
     color: #ff6a00;
 }
 
+/* Team page */
+.text-accent { color: #ff6a00; }
+
+/* Section heading underline (aligns with .hero-section border) */
+.section-title {
+    border-bottom: 4px solid rgba(255,106,0,0.6);
+    padding-bottom: .4rem;
+}
+
+/* Card shell: translucent panel echoing your .stats-box / .footer */
+.team-card {
+    background: rgba(255,255,255,0.05);
+    border: 2px solid rgba(255,255,255,0.08);
+    border-radius: .6rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform .25s ease, border-color .25s ease, box-shadow .3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255,106,0,0.35);
+    box-shadow: 0 10px 24px rgba(0,0,0,.25);
+}
+
+/* Thumbnail ratios (CSS-only stand-ins for Bootstrap's ratio, since we only loaded grid) */
+.ratio-4x3 {
+    position: relative;
+    width: 100%;
+    border-top-left-radius: .6rem;
+    border-top-right-radius: .6rem;
+    overflow: hidden;
+}
+
+.ratio-1x1 {
+    position: relative;
+    width: 100%;
+    border-top-left-radius: .6rem;
+    border-top-right-radius: .6rem;
+    overflow: hidden;
+}
+
+.team-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;              /* keep the card fully filled */
+    display: block;
+}
+
+/* Body area */
+.team-body { color: #ddd; }
+
+/* Details/summary (native, accessible, no JS) */
+.team-details {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: .5rem;
+}
+
+.summary-link {
+    color: rgba(255,106,0,0.85);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.summary-link::after {
+    content: " ▼";
+    font-size: .85em;
+    color: rgba(255,106,0,0.6);
+}
+
+details[open] .summary-link::after { content: " ▲"; }
+
+/* Compact roster chips */
+.team-chip {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: #ddd;
+    padding: .45rem .8rem;
+    margin-right: 1rem;
+    border-radius: 999px;
+    font-size: .875rem;
+    white-space: nowrap;
+}
+
 /* Driver page */
 .driver-img {
     width: 100%;
@@ -338,5 +422,9 @@ input[name="gallery"] {
     .driver-bio {
         padding-left: 3rem;
         padding-right: 3rem;
+    }
+    .team-body {
+        padding-left: .25rem;
+        padding-right: .25rem;
     }
 }
