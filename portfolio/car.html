@@ -19,27 +19,26 @@
     <title>Car & Tech</title>
 </head>
 <body>
-    <main>
-        <div class="container-fluid" id="navigation">
-            <header class="header">
-                <a href="#" class="logo">Apex Velocity Racing</a>
-                <!-- Mobile device menu icon, will be hidden on large screens -->
-                <!-- Workaround for no javascript coding to display menu after clicking mobile icon -->
-                <input type="checkbox" id="check">
-                <!-- Mobile device menu icon -->
-                <label for="check" class="icons">
-                    <img src="assets/mobile-menu-icon.png" alt="Menu Icon" id="menu-icon">
-                </label>
-                <nav class="navbar">
-                    <a href="index.html">Home</a>
-                    <a href="team.html">Team</a>
-                    <a href="drivers.html">Drivers</a>
-                    <a href="car.html">Car & Tech</a>
-                    <a href="news.html">News</a>
-                </nav>
-            </header>
-        </div>
-
+    <div class="container-fluid" id="navigation">
+        <header class="header">
+            <a href="#" class="logo">Apex Velocity Racing</a>
+            <!-- Mobile device menu icon, will be hidden on large screens -->
+            <!-- Workaround for no javascript coding to display menu after clicking mobile icon -->
+            <input type="checkbox" id="check">
+            <!-- Mobile device menu icon -->
+            <label for="check" class="icons">
+                <img src="assets/mobile-menu-icon.png" alt="Menu Icon" id="menu-icon">
+            </label>
+            <nav class="navbar">
+                <a href="index.html">Home</a>
+                <a href="team.html">Team</a>
+                <a href="drivers.html">Drivers</a>
+                <a href="car.html">Car & Tech</a>
+                <a href="news.html">News</a>
+            </nav>
+        </header>
+    </div>
+    <main class="container page-content">
         <!-- Hero Section -->
         <div class="container-fluid section text-center hero-section">
             <h1>Car & Tech</h1>
@@ -47,59 +46,80 @@
         </div>
 
 
-        <!-- Engine Section -->
-        <div class="container section text-center my-4">
-            <img src="assets/car-engine.webp" alt="AVR Car 1" class="car-img">
-        </div>
-
-        <!-- Engine Statistics -->
-        <div class="container section my-4">
-            <div class="row row-cols-1 row-cols-md-2 g-4">
-                <div class="col">
-                    <div class="card h-100 p-3 engine stats-box">
-                        <h3 class="mb-3"><i class="fas fa-cogs"></i> Engine Specifications</h3>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-bolt"></i> Type: 1.6L V6 Turbo Hybrid</li>
-                            <li><i class="fas fa-tachometer-alt"></i> Power Output: 1000+ HP</li>
-                            <li><i class="fas fa-sync-alt"></i> RPM Limit: 15,000</li>
-                            <li><i class="fas fa-battery-half"></i> ERS Deployment: 160 HP boost</li>
-                            <li><i class="fas fa-gas-pump"></i> Fuel Efficiency: 35% thermal efficiency</li>
-                        </ul>
-                    </div>
+        <!-- Engine & Performance specs (two cards side by side) -->
+        <section class="section">
+            <div class="container section text-center my-4">
+                <img src="assets/car-engine.webp" alt="AVR Car 1" class="img-fluid">
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <article class="card">
+                        <div class="card-body">
+                            <h3 class="card-title text-accent">Engine Specifications</h3>
+                            <!-- icon list, no bullets -->
+                            <ul class="icon-list text-dim">
+                                <li><i class="fas fa-bolt"></i> Type: 1.6L V6 Turbo Hybrid</li>
+                                <li><i class="fas fa-tachometer-alt"></i> Power Output: 1000+ HP</li>
+                                <li><i class="fas fa-sync-alt"></i> RPM Limit: 15,000</li>
+                                <li><i class="fas fa-battery-half"></i> ERS Deployment: 160 HP boost</li>
+                                <li><i class="fas fa-gas-pump"></i> Fuel Efficiency: ~35% thermal efficiency</li>
+                            </ul>
+                        </div>
+                    </article>
                 </div>
-                <div class="col">
-                    <div class="card h-100 p-3 engine stats-box">
-                        <h3 class="mb-3"><i class="fas fa-tachometer-alt"></i> Performance Metrics</h3>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-stopwatch"></i> 0–100 km/h: 2.5 seconds</li>
-                            <li><i class="fas fa-road"></i> Top Speed: 360 km/h</li>
-                            <li><i class="fas fa-wind"></i> Downforce: 5,000 N at 250 km/h</li>
-                            <li><i class="fas fa-weight-hanging"></i> Weight: 798 kg (including driver)</li>
-                            <li><i class="fas fa-car-crash"></i> Braking Distance: 100–0 km/h in 2.8 seconds</li>
-                        </ul>
-                    </div>
+
+                <div class="col-12 col-md-6">
+                    <article class="card">
+                        <div class="card-body">
+                            <h3 class="card-title text-accent">Performance Metrics</h3>
+                            <ul class="icon-list text-dim">
+                                <li><i class="fas fa-stopwatch"></i> 0–100 km/h: 2.5 seconds</li>
+                                <li><i class="fas fa-road"></i> Top Speed: 360 km/h</li>
+                                <li><i class="fas fa-wind"></i> Downforce: 5,000 N @ 250 km/h</li>
+                                <li><i class="fas fa-weight-hanging"></i> Weight: 798 kg (including driver)</li>
+                                <li><i class="fas fa-car-crash"></i> 100–0 km/h in 2.8 seconds</li>
+                            </ul>
+                        </div>
+                    </article>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Rear View Image -->
-        <div class="container section text-center my-4">
-            <img src="assets/car-angled-rear-view-light.webp" alt="AVR Car Rear View" class="img-fluid car-img my-4">
-            <div class="row row-cols-1 row-cols-md-2 g-4">
-                <div class="col">
-                    <div class="card h-100 p-3 stats-box">
-                        <h3><i class="fas fa-car"></i> Chassis & Aerodynamics</h3>
-                        <p><i class="fas fa-feather"></i> Constructed from carbon fiber composites, the AVR chassis balances rigidity with lightweight efficiency. The aerodynamic package includes a multi‑element front wing, sculpted sidepods, and a high‑downforce rear wing designed for maximum cornering grip.</p>
-                    </div>
+        <!-- Rear view + tech notes -->
+        <section class="section">
+            <div class="container section text-center my-4">
+                <img src="assets/car-angled-rear-view-light.webp" alt="AVR Car Rear View" class="img-fluid">
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <article class="card">
+                        <div class="card-body">
+                            <h3 class="card-title text-accent">Engine Specifications</h3>
+                            <!-- icon list, no bullets -->
+                            <p class="text-dim">
+                                Constructed from carbon fiber composites, the chassis balances rigidity with lightweight efficiency.
+                                Aero package features a multi‑element front wing, sculpted sidepods, and a high‑downforce rear wing
+                                for cornering grip across varied ride heights and yaw angles.
+                            </p>
+                        </div>
+                    </article>
                 </div>
-                <div class="col">
-                    <div class="card h-100 p-3 stats-box">
-                        <h3><i class="fas fa-microchip"></i> Technology & Innovation</h3>
-                        <p><i class="fas fa-satellite-dish"></i> The car integrates advanced telemetry systems, hybrid energy recovery, and adaptive suspension. Real‑time data streams allow engineers to fine‑tune performance during races, while the hybrid system ensures both speed and sustainability.</p>
-                    </div>
+
+                <div class="col-12 col-md-6">
+                    <article class="card">
+                        <div class="card-body">
+                            <h3 class="card-title text-accent">Performance Metrics</h3>
+                            <p class="text-dim">
+                                Advanced telemetry pipelines, hybrid energy recovery, and adaptive suspension enable precision tuning
+                                during sessions. Real‑time insights drive setup decisions, while the hybrid system ensures both speed
+                                and sustainability.
+                            </p>
+                        </div>
+                    </article>
                 </div>
             </div>
-        </div>
+        </section>
+
 
     </main>
     <footer class="footer py-3">
