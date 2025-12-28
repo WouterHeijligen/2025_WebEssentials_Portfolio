@@ -9,160 +9,22 @@
     <link rel="shortcut icon" href="portfolio/assets/favicon/favicon.ico" >
     <link rel="apple-touch-icon" sizes="180x180" href="portfolio/assets/favicon/apple-touch-icon.png" >
     <link rel="manifest" href="portfolio/assets/favicon/site.webmanifest" >
+    <!-- Eigen CSS -->
+    <link rel="stylesheet" href="portfolio/css/portfolio.css">
+    <link rel="stylesheet" href="portfolio/css/index.css">
     <title>Portfolio 1WT</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            /* Kept at 16px to define the 1rem base */
-            font-size: 16px;
-            height: 100vh;
-            background-color: #00162b;
-            overflow: hidden;
-        }
-
-        body {
-            font-family: "Roboto Light", Calibri, sans-serif;
-            line-height: 1.5;
-        }
-
-        h1 {
-            /* 32px / 16 = 2rem */
-            margin: 2rem 0;
-            /* 1.6px / 16 = .1rem */
-            letter-spacing: .1rem;
-            color: #fff;
-            /* Kept in px */
-            text-shadow: 3px 3px 3px rgba(0, 0, 0, .5);
-        }
-
-        main {
-            /* 500px / 16 = 31.25rem */
-            max-width: 31.25rem;
-            width: 90%;
-            /* 32px / 16 = 2rem */
-            margin: 2rem auto;
-            text-align: center;
-        }
-
-        nav {
-            /* 32px / 16 = 2rem */
-            margin-top: 2rem;
-            font-weight: bold;
-
-            ul {
-                display: flex;
-                /* 32px / 16 = 2rem */
-                gap: 2rem;
-                list-style: none;
-            }
-
-            li {
-                flex: 1;
-                display: flex;
-                background: rgba(255, 255, 255, .1);
-                /* 8px / 16 = .5rem; 16px / 16 = 1rem */
-                padding: .5rem 1rem;
-                /* 4px / 16 = .25rem */
-                border-radius: .25rem;
-                /* Kept in px */
-                box-shadow: 3px 3px 5px rgba(255, 255, 255, .1);
-                transition: .3s;
-                /* Kept in px */
-                backdrop-filter: blur(10px);
-                /* Kept in px */
-                border: 2px solid rgba(255, 255, 255, .2);
-
-                &:hover {
-                    /* Kept in px */
-                    transform: translate(-1px, -1px);
-                    /* Kept in px */
-                    box-shadow: 3px 3px 5px rgba(255, 255, 255, .1);
-                }
-            }
-
-            a {
-                flex: 1;
-                /* 24px / 16 = 1.5rem */
-                font-size: 1.5rem;
-                font-variant: small-caps;
-                text-decoration: none;
-                color: #fff;
-            }
-
-            a:hover {
-                color: #d2003c;
-            }
-        }
-
-        aside {
-            /* 150px / 16 = 9.375rem */
-            width: 9.375rem;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            filter: grayscale(50%);
-            opacity: .2;
-            animation: move 20s infinite;
-
-
-            img {
-                width: 100%;
-                height: auto;
-            }
-        }
-
-        @keyframes move {
-            0%, 100% {
-                /* -150px / 16 = -9.375rem */
-                bottom: -9.375rem;
-                opacity: .2;
-            }
-            10% {
-                /* -10px / 16 = -.625rem */
-                bottom: -.625rem;
-                opacity: 1;
-            }
-            10.5% {
-                /* -150px / 16 = -9.375rem */
-                bottom: -9.375rem;
-                opacity: .2;
-            }
-        }
-
-        /* Responsive Design for Mobile Devices */
-        @media (max-width: 600px) {
-            main {
-                width: 100%;
-                margin: 2rem 0;
-                padding: 0 1rem;
-                max-width: none;
-            }
-
-            /* 2. Vertical Stacking For buttons */
-            nav ul {
-                /* Changes the flex direction from row (default) to column */
-                flex-direction: column;
-            }
-
-            /* 3. Button (li) Adjustment */
-            nav li {
-                width: 100%;
-            }
-        }
-    </style>
 </head>
 <body>
 <main>
-    <h1>Wouter Heijligen</h1>
+    <!-- Hero Section -->
+    <div class="container-fluid section text-center hero-section">
+        <h1>Wouter Heijligen</h1>
+        <p>Discover my portfolio and flyer</p>
+    </div>
     <nav>
         <ul>
-            <li><a href="portfolio/index.html" target="subsite">Portfolio</a></li>
-            <li><a href="flyer/index.html" target="subsite">Flyer</a></li>
+            <li><a href="portfolio/index.html" target="subsite" class="btn btn--outline">Portfolio</a></li>
+            <li><a href="flyer/index.html" target="subsite" class="btn btn--outline">Flyer</a></li>
         </ul>
     </nav>
 </main>
