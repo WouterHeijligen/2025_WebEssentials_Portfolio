@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <!-- Eigen CSS -->
     <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="css/news.css">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96" >
     <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" >
@@ -42,6 +43,50 @@
             <h1>Apex Velocity racing</h1>
             <p>Explore the story behind Apex Velocity Racing</p>
         </div>
+
+        <!-- Compact news articles -->
+        <section class="section">
+            <h2 class="section-title heading-strong">Latest News</h2>
+
+            <div class="row">
+                <!-- Compact #1 -->
+                <div class="col-12 col-md-6">
+                    <article class="card">
+                        <div class="card-thumb aspect--landscape">
+                            <img class="img-fluid" src="assets/news-banner-partnership.webp" alt="Technical partnership">
+                        </div>
+                        <div class="news-body">
+                            <div class="news-kicker">Announcement</div>
+                            <h3 class="news-title text-accent">AVR announces multi‑year technical partnership</h3>
+                            <div class="news-meta">Dec 2025 • Factory, Partnerships</div>
+                            <p class="news-excerpt">
+                                The collaboration strengthens materials R&amp;D, simulation workflows, and supply chain resilience ahead of next season.
+                            </p>
+                            <a class="btn btn--outline" href="news-article-01.html">Read full story</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Compact #2 -->
+                <div class="col-12 col-md-6">
+                    <article class="card">
+                        <div class="card-thumb aspect--landscape">
+                            <img class="img-fluid" src="assets/championship.webp" alt="Celebration scene">
+                        </div>
+                        <div class="news-body">
+                            <div class="news-kicker">Race Report</div>
+                            <h3 class="news-title text-accent">AVR secures podium with record pit‑stop average</h3>
+                            <div class="news-meta">Dec 2025 • Strategy, Operations</div>
+                            <p class="news-excerpt">
+                                A disciplined tyre program and clean double‑stack delivered a late charge, converting pace into points.
+                            </p>
+                            <a class="btn btn--outline" href="news-article-02.html">Read full story</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
 
         <!-- Featured -->
         <section class="section">
@@ -163,26 +208,78 @@
         <!-- Gallery teaser -->
         <section class="section">
             <h2 class="section-title heading-strong">Gallery</h2>
-            <div class="row">
-                <div class="col-6 col-lg-3">
-                    <figure class="gallery-card">
-                        <img class="img-fluid" src="assets/racing-picture-sunny.webp" alt="Championship moment">
-                    </figure>
-                </div>
-                <div class="col-6 col-lg-3">
-                    <figure class="gallery-card">
-                        <img class="img-fluid" src="assets/car-top-view-garage.webp" alt="Championship moment">
-                    </figure>
-                </div>
-                <div class="col-6 col-lg-3">
-                    <figure class="gallery-card">
-                        <img class="img-fluid" src="assets/finish-line-scene.webp" alt="Championship moment">
-                    </figure>
-                </div>
-                <div class="col-6 col-lg-3">
-                    <figure class="gallery-card">
-                        <img class="img-fluid" src="assets/championship.webp" alt="Championship moment">
-                    </figure>
+            <!-- Car Gallery -->
+            <div class="container my-5">
+                <div class="gallery-wrapper">
+                    <!-- Radio Inputs (Hidden) -->
+                    <input type="radio" name="gallery" id="img-1" checked>
+                    <input type="radio" name="gallery" id="img-2">
+                    <input type="radio" name="gallery" id="img-3">
+                    <input type="radio" name="gallery" id="img-4">
+                    <input type="radio" name="gallery" id="img-5">
+                    <input type="radio" name="gallery" id="img-6">
+                    <input type="radio" name="gallery" id="img-7">
+                    <input type="radio" name="gallery" id="img-8">
+                    <input type="radio" name="gallery" id="img-9">
+                    <input type="radio" name="gallery" id="img-10">
+                    <input type="radio" name="gallery" id="img-11">
+                    <input type="radio" name="gallery" id="img-12">
+
+                    <!-- Main Picture Area -->
+                    <div class="main-display mb-4">
+                        <img src="assets/celebration-scene.webp" alt="Celebrations" class="img-1-view">
+                        <img src="assets/championship.webp" alt="World champion!" class="img-2-view">
+                        <img src="assets/finish-line-scene.webp" alt="Finish line scene" class="img-3-view">
+                        <img src="assets/pit-garage.webp" alt="Pit garage" class="img-4-view">
+                        <img src="assets/racing-picture-sunny.webp" alt="Circuit racing scene" class="img-5-view">
+                        <img src="assets/car-top-view-garage.webp" alt="AVR Car design" class="img-6-view">
+                        <img src="assets/car-angled-front-view.webp" alt="Angled front view" class="img-7-view">
+                        <img src="assets/car-front-view.webp" alt="Front view" class="img-8-view">
+                        <img src="assets/car-side-view.webp" alt="Side view" class="img-9-view">
+                        <img src="assets/car-top-rear-view.webp" alt="Top rear view" class="img-10-view">
+                        <img src="assets/car-rear-angled-view.webp" alt="Angled rear view" class="img-11-view">
+                        <img src="assets/car-angled-front-view-2.webp" alt="Angled Front view" class="img-12-view">
+                    </div>
+
+                    <!-- Thumbnail Grid by using a flexbox with centered content -->
+                    <div class="d-flex flex-wrap justify-content-center thumbnail-grid">
+                        <label for="img-1" class="me-2">
+                            <img src="assets/celebration-scene.webp" alt="Celebrations" class="thumb">
+                        </label>
+                        <label for="img-2" class="me-2">
+                            <img src="assets/championship.webp" alt="World champion!" class="thumb">
+                        </label>
+                        <label for="img-3" class="me-2">
+                            <img src="assets/finish-line-scene.webp" alt="Finish line scene" class="thumb">
+                        </label>
+                        <label for="img-4" class="me-2">
+                            <img src="assets/pit-garage.webp" alt="Pit garage" class="thumb">
+                        </label>
+                        <label for="img-5" class="me-2">
+                            <img src="assets/racing-picture-sunny.webp" alt="Circuit racing scene" class="thumb">
+                        </label>
+                        <label for="img-6" class="me-2">
+                            <img src="assets/car-top-view-garage.webp" alt="AVR Car design" class="thumb">
+                        </label>
+                        <label for="img-7" class="me-2">
+                            <img src="assets/car-angled-front-view.webp" alt="Angled front view" class="thumb">
+                        </label>
+                        <label for="img-8" class="me-2">
+                            <img src="assets/car-front-view.webp" alt="Front view" class="thumb">
+                        </label>
+                        <label for="img-9" class="me-2">
+                            <img src="assets/car-side-view.webp" alt="Side view" class="thumb">
+                        </label>
+                        <label for="img-10" class="me-2">
+                            <img src="assets/car-top-rear-view.webp" alt="Top rear view" class="thumb">
+                        </label>
+                        <label for="img-11" class="me-2">
+                            <img src="assets/car-rear-angled-view.webp" alt="Angled rear view" class="thumb">
+                        </label>
+                        <label for="img-12" class="me-2">
+                            <img src="assets/car-angled-front-view-2.webp" alt="Angled Front view" class="thumb">
+                        </label>
+                    </div>
                 </div>
             </div>
         </section>

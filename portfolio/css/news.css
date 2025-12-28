@@ -1,0 +1,150 @@
+/* News CSS */
+.news-body{
+    color:#ddd;padding:.75rem .9rem 1rem;
+}
+
+.news-title{
+    margin:.25rem 0 .25rem;
+}
+
+.news-kicker{
+    color:var(--accent);
+    font-weight:600;
+    font-size:.9rem;
+    letter-spacing:.02em;
+}
+
+.news-meta{
+    color:var(--text-dim);
+    font-size:.85rem;
+    margin-bottom:.5rem;
+}
+
+.news-excerpt{
+    color:#ccc;
+    font-size:.95rem;
+}
+
+/* Long-form article pages */
+.article{
+    background:var(--panel-bg);
+    border:2px solid var(--panel-border);
+    border-radius:.6rem;
+    overflow:hidden;
+}
+
+.article-hero{ /* hero image on article page */
+    position:relative;
+}
+
+.article-hero .card-thumb{
+    border-top-left-radius:.6rem;
+    border-top-right-radius:.6rem;
+
+}
+.article-header{
+    padding:1rem 1rem .5rem;
+    color:#ddd;
+}
+
+.article-title{
+    color:var(--accent);
+    margin:0 0 .25rem;
+}
+
+.article-subtitle{
+    color:var(--text-dim);margin:0 0 .75rem;font-size:1rem;
+}
+
+.article-meta{
+    color:var(--text-dim);
+    font-size:.85rem;
+    margin-bottom:1rem;
+}
+
+.article-content{
+    padding:1rem;
+}
+
+.article-content p{
+    color:#ddd;
+    line-height:1.7;
+    margin:0 0 1rem;
+}
+
+.article-content h2{
+    color:var(--accent);
+    margin:1.25rem 0 .5rem;
+    font-size:1.25rem;
+}
+
+.article-content ul{
+    color:#ddd;
+    margin:.25rem 0 1rem 0;
+    padding-left:1.1rem;
+}
+
+.article-content li{
+    margin:.25rem 0;
+}
+
+.article-divider{
+    height:2px;
+    background:rgba(255,255,255,.08);
+    margin:1rem 0;
+}
+
+.pull-quote{
+    background:rgba(255,255,255,.05);
+    border-left:4px solid rgba(255,106,0,.6);
+    color:#ddd;
+    padding:.75rem 1rem;
+    margin:1rem 0;
+    border-radius:.4rem;
+}
+
+.figure{
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:.6rem;
+    overflow:hidden;
+    margin:1rem 0;
+}
+
+.figure img{
+    width:100%;
+    height:auto;
+    display:block;
+}
+
+.figure-caption{
+    color:var(--text-dim);
+    font-size:.85rem;
+    padding:.5rem .75rem;
+}
+
+.tag-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.5rem;
+    margin-top:.5rem;
+}
+
+.tag-chip{
+    background:rgba(255,255,255,.05);
+    border:1px solid var(--panel-border);
+    color:#ddd;
+    border-radius:999px;
+    font-size:.85rem;
+    padding:.35rem .7rem;
+}
+
+/* Responsive refinements */
+@media (min-width:768px){
+    .article-header{padding:1.25rem 1.25rem .75rem;}
+    .article-content{padding:1.25rem 1.5rem;}
+}
+
+@media (min-width:1400px){
+    .article-content{padding:1.5rem 2rem;}
+}
