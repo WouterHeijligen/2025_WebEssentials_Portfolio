@@ -53,7 +53,9 @@
 }
 
 .article-subtitle{
-    color:var(--text-dim);margin:0 0 .75rem;font-size:1rem;
+    color:var(--text-dim);
+    margin:0 0 .75rem;
+    font-size:1rem;
 }
 
 .article-meta{
@@ -69,6 +71,15 @@
     color:var(--accent);
     margin:0.5rem 0;
     font-size:1.25rem;
+}
+
+.spacer{
+    height: 2rem;
+}
+
+/* Reduce top margin on section subtitles; keep a small bottom gap */
+.timeline, .cta, .sponsors {
+    margin-top: 3mm !important;
 }
 
 .article-divider{
@@ -129,6 +140,10 @@
 .sponsors{
     gap:.75rem;
     flex-wrap:wrap;
+}
+
+.print-header{
+    display: none;
 }
 
 /* Responsive refinements */

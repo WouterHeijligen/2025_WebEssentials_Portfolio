@@ -468,7 +468,9 @@ input[name="gallery"] {
 
     /* Home page */
     .card-body{
-        padding:1rem 1.1rem 1.25rem;}
+        padding:1rem 1.1rem 1.25rem;
+    }
+
     .card-thumb img{
         object-position:50% 14%;
     }
