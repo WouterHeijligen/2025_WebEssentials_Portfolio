@@ -1,0 +1,20 @@
+
+<!-- pulsewear.svg (trimmed viewBox, centered, minimal top space) -->
+<svg viewBox="0 0 220 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pulsewear">
+  <title>Pulsewear</title>
+
+  <!-- Heartbeat mark (near the top of the canvas) -->
+  <g fill="none" stroke="currentColor" stroke-width="3" vector-effect="non-scaling-stroke">
+    <path d="M10 22 H90 L106 10 L118 40 L130 26 H210"/>
+  </g>
+
+  <!-- Wordmark centered under the mark -->
+  <text
+    x="50%" y="56"
+    text-anchor="middle"
+    font-family="Segoe UI, Roboto, Arial, sans-serif"
+    font-size="18" font-weight="700"
+    fill="currentColor">
+    PULSEWEAR
+  </text>
+</svg>

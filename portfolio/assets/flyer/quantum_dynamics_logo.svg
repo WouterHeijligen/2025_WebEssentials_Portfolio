@@ -1,0 +1,13 @@
+<!-- quantum-dynamics.svg -->
+<svg viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Quantum Dynamics">
+  <title>Quantum Dynamics</title>
+  <g fill="none" stroke="currentColor" stroke-width="3">
+    <circle cx="18" cy="10" r="5"/>
+    <circle cx="18" cy="38" r="5"/>
+    <path d="M18 15c6 4 6 14 0 18"/>
+  </g>
+  <g fill="currentColor">
+    <text x="44" y="20" font-family="Segoe UI, Roboto, Arial" font-size="18" font-weight="700">QUANTUM</text>
+    <text x="44" y="38" font-family="Segoe UI, Roboto, Arial" font-size="14" letter-spacing="1">DYNAMICS</text>
+  </g>
+</svg>

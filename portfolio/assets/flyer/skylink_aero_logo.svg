@@ -1,0 +1,46 @@
+
+<!-- skylink-aero.svg -->
+<svg viewBox="0 0 640 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Skylink Aero">
+  <title>Skylink Aero</title>
+
+  <!-- Mark -->
+  <g transform="translate(40,20)">
+    <!-- Circle ring -->
+    <circle cx="80" cy="100" r="80" fill="none" stroke="currentColor" stroke-width="12"/>
+
+    <!-- Aircraft (top-down) -->
+    <!-- Nose -> right wing leading edge -> right wing tip -> right wing trailing edge
+         -> tail root -> right tailplane tip -> tail end -> left tailplane tip
+         -> tail root (left) -> left wing trailing edge -> left wing tip
+         -> left wing leading edge -> back to nose -->
+    <path fill="currentColor" d="
+      M 80 26
+      L 89 66
+      L 132 100
+      L 89 134
+      L 89 118
+      L 116 144
+      L 80 166
+      L 44 144
+      L 71 118
+      L 71 134
+      L 28 100
+      L 71 66
+      L 80 26
+      Z"/>
+  </g>
+
+  <!-- Wordmark -->
+  <g fill="currentColor">
+    <text x="240" y="110"
+          font-family="Segoe UI, Roboto, Arial, sans-serif"
+          font-size="72" font-weight="800">
+      SKYLINK
+    </text>
+    <text x="240" y="176"
+          font-family="Segoe UI, Roboto, Arial, sans-serif"
+          font-size="40" font-weight="700" letter-spacing="20">
+      AERO
+    </text>
+  </g>
+</svg>
