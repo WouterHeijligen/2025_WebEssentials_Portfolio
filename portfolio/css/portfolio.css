@@ -31,7 +31,7 @@ body {
 
 /* Header - Mobile default */
 .header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 90%;
@@ -45,6 +45,12 @@ body {
     border: 2px solid var(--panel-bg);
     border-radius: 0.2rem;
     z-index: 1100;
+}
+
+/* When scrolled */
+.header.scrolled {
+    margin-top: 0.5rem;   /* or 0 if you want it fully at the top */
+    width: 90%;
 }
 
 /* Logo */
