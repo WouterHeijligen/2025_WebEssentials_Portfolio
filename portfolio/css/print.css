@@ -1,8 +1,4 @@
 /* ===== Flyer fix layer (small, sits on top of your CSS) ===== */
-@page {
-    size: A4;
-}
-
 html, body {
         background:#fff;
         color:#0f172a;
@@ -27,6 +23,10 @@ html, body {
 
 .article-subtitle{
     margin: 0;
+}
+
+.row, .column {
+    display: flex !important;
 }
 
 /* Don’t let the accent header force a page break */
