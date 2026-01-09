@@ -572,7 +572,7 @@ input[name="gallery"] {
 /* -------------------- PRINT STYLES -------------------- */
 @media print {
     /* Hide layout elements */
-    .header, .navbar, #menu-icon, #navigation, .footer, .back-to-top, .pull-quote {
+    .header, .tag-list, .navbar, #menu-icon, #navigation, .footer, .back-to-top, .pull-quote {
         display: none !important;
     }
 
@@ -583,7 +583,7 @@ input[name="gallery"] {
     .article > :first-child{ margin-top: 0 !important; }
 
     /* white background and black text color */
-    html, body, .text-dim, .chip {
+    html, body, .text-dim, h3, .chip {
         background:#fff;
         color: black !important;
     }
