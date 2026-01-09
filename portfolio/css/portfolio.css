@@ -145,7 +145,14 @@ body {
 
 .text-dim{
     color:var(--text-dim);
+    /* change list style to square instead of bullets */
+    list-style-type: square;
 }
+
+/* Change the color of list bullet, the most reliable method is using the ::marker pseudo-element. */
+ .text-dim li::marker {
+     color:var(--accent);
+ }
 
 .text-accent {
     color:var(--accent);
