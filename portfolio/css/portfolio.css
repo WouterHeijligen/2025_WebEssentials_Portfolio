@@ -337,6 +337,16 @@ body {
     flex: 0 0 1.25rem;
 }
 
+/* striped table layout */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(255, 255, 255, 0.05); /* subtle stripe */
+}
+
+.table-striped tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* optional hover effect */
+}
+
+
 /* Gallery page */
 /* Hide the radio buttons (used as checkbox for changing the main picture) */
 input[name="gallery"] {
