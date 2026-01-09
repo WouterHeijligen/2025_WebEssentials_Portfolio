@@ -572,13 +572,40 @@ input[name="gallery"] {
 /* -------------------- PRINT STYLES -------------------- */
 @media print {
     /* Hide layout elements */
-    .header,
-    .navbar,
-    #menu-icon,
-    #navigation,
-    .footer,
-    .back-to-top {
+    .header, .navbar, #menu-icon, #navigation, .footer, .back-to-top, .pull-quote {
         display: none !important;
+    }
+
+    /* Kill any print-time transforms that can push content */
+    body, .article{ transform: none !important; }
+
+    /* Avoid large top margins at the very first printable element */
+    .article > :first-child{ margin-top: 0 !important; }
+
+    /* white background and black text color */
+    html, body, .text-dim, .chip {
+        background:#fff;
+        color: black !important;
+    }
+
+    /* ensure child elements aren't collapsing or overflowing in print */
+    .row, .column {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    /* remove article border */
+    .article{
+        border:0;
+        border-radius: 0;
+        padding: 0;
+        overflow:hidden;
+        break-inside: avoid-page;
+    }
+
+    /* Make sponsor images black again*/
+    .sponsor-img--white {
+        filter: brightness(0)
     }
 }
 

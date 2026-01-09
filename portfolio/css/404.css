@@ -23,6 +23,7 @@ body {
             url("/portfolio/assets/finish-line-scene.webp") !important;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     text-align: center;
 }
 
