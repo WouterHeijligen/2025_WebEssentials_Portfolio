@@ -487,12 +487,13 @@ input[name="gallery"] {
     }
     .navbar a {
         display: inline-block;
-        font-size: 1.5rem;
-        margin-left: 2.1rem;
+        font-size: 0.8rem;
+        margin-left: 0.3rem;
         margin-top: 0;
         margin-bottom: 0;
     }
     .navbar ul {
+        display: flex;
         flex-direction: row;
     }
 
@@ -518,6 +519,10 @@ input[name="gallery"] {
 
 /* Desktop and up (≥ 992px) */
 @media (min-width: 992px) {
+    .navbar a {
+        font-size: 1rem;
+        margin-left: 0.6rem;
+    }
     .header {
         margin: 6.25rem 5%;
         padding: 1.25rem 6.25rem;
@@ -539,6 +544,10 @@ input[name="gallery"] {
 
 /* Extra large screens (≥ 1400px) */
 @media (min-width: 1400px) {
+    .navbar a {
+        font-size: 1.5rem;
+        margin-left: 2.1rem;
+    }
     .driver-img {
         max-width: 600px;
     }
@@ -559,3 +568,17 @@ input[name="gallery"] {
         object-position:50% 16%;
     }
 }
+
+/* -------------------- PRINT STYLES -------------------- */
+@media print {
+    /* Hide layout elements */
+    .header,
+    .navbar,
+    #menu-icon,
+    #navigation,
+    .footer,
+    .back-to-top {
+        display: none !important;
+    }
+}
+
