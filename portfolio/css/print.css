@@ -1,141 +1,156 @@
-/* ===== Flyer fix layer (small, sits on top of your CSS) ===== */
+/* ===== A4 print setup + full-width header ===== */
+:root {
+    --accent: #ff6a00;
+    --page-w: 210mm;
+    --page-h: 297mm;
+    --page-margin: 10mm; /* change to taste */
+}
+
+/* Base */
 html, body {
-        background:#fff;
-        color:#0f172a;
+    background: #fff;
+    color: #0f172a;
 }
 
-/* Remove screen-only width constraints */
-.container     {
-    max-width: none;
-    width: auto;
+/* The printable area matches the page content box (inside @page margins) */
+.container{
+    width: calc(var(--page-w) - 2 * var(--page-margin));
+    min-height: auto;
+    margin: 0 auto;
     padding: 0;
-    margin: 0 ;
+    box-sizing: border-box;
 }
 
-/* remove article border */
-.article{
-    border:0;
-    border-radius: 0;
-    padding: 0;
-    overflow:hidden;
-    break-inside: avoid-page;
-}
-
-.article-subtitle{
-    margin: 0;
-}
-
-.row, .column {
-    display: flex !important;
-}
-
-/* Don’t let the accent header force a page break */
-.print-header, .print-header--accent{
-    margin-bottom: 6mm;
-}
-
-/* Kill any print-time transforms that can push content */
-body, .article{ transform: none !important; }
-
-/* Avoid large top margins at the very first printable element */
-.article > :first-child{ margin-top: 0 !important; }
-
+/* ---- Header that spans the entire printable width ---- */
 .print-header--accent{
-    width: 100%;
-    padding: 10mm 10mm 8mm;
-    color:#fff;
+    /* Make the header reach both content edges by cancelling the page margin */
+    width: calc(100% + 2 * var(--page-margin));
+    margin: 0 calc(-1 * var(--page-margin)) 6mm;
+    padding: 8mm 10mm 6mm;
+    color: #fff;
     display: block;
     background: linear-gradient(135deg, var(--accent), rgba(255,106,0,.85));
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
 }
-
 .print-header--accent .article-title{
-    color:#fff !important;
-    margin:0 0 .25rem;
-    font-size: 2rem;
+    color: #fff !important;
+    margin: 0 0 .25rem;
+    font-size: 1.8rem;
 }
-
 .print-header--accent .article-subtitle{
-    color:rgba(255,255,255,.88) !important;
-    margin:0 0 .5rem;
+    color: rgba(255,255,255,.88) !important;
+    margin: 0 0 .5rem;
 }
 
-.print-header--accent .article-meta{
-    color:rgba(255,255,255,.85) !important;
-}
-
-/* adjust card border */
-.card{
-    border:1px solid var(--accent);
-    margin: 0;
-    margin-bottom: -20mm;
-}
-
-.card-body{
-    padding: 4mm 5mm
-}
-
-.card-title{
-    font-size: 1rem;
-}
-
-.card-title, .text-dim{
-    color: #0f172a !important;
-}
-
-.timeline ul {
-    font-size: 0.9rem;
-}
-
-/* Move article content slightly up for smaller margins */
-.article-content{
-    margin-top: -6mm;
-}
-
-/* Two columns picture + event info only when printing */
+/* ---- Layout helpers ---- */
 .intro-pair{
     display: grid;
-    grid-template-columns: 1.2fr 1fr;   /* image : event info ratio */
+    grid-template-columns: 1.2fr 1fr;
     gap: 4mm;
     align-items: center;
     padding: 0 4mm;
 }
 
-/* Keep the hero image neat */
-.article-hero .figure{
-    background:#fff;
-    border:1px solid #e6e7ea;
-    border-radius:.6rem;
-    overflow:hidden;
+/* ---- Cards & imagery ---- */
+.card{
+    border: 1px solid var(--accent);
+    border-radius: .5rem;
 }
-.article-hero .figure .card-thumb{
+.card-body{
+    padding: 1mm;
+}
+.card-title{
+    font-size: .95rem;
+}
+.card-thumb{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-top-left-radius: .6rem;
+    border-top-right-radius: .6rem;
+}
+.card-thumb img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 12%;
+}
+.aspect--portrait{
+    aspect-ratio: 2 / 3;
+}
+.aspect--landscape{
     aspect-ratio: 16 / 9;
-}
-.article-hero img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    border-radius: 0.5rem;
+    border-radius: .6rem;
 }
 
-/* Event panel stays readable on paper */
+/* Generic figure (use light theme for print) */
+.figure{
+    background: #fff;
+    border: 1px solid #bbbbbb;
+    border-radius: .5rem;
+    overflow: hidden;
+    margin: 3mm 0;
+}
+.figure img{
+    width: 100%;
+    height: auto;
+    display: block; }
+.figure-caption{
+    font-size: .85rem;
+    padding: .5rem .75rem;
+}
+
+/* Panels */
+.details-panel{
+    border: 1px solid var(--accent);
+    border-radius: .6rem;
+    padding: 4mm;
+}
+
+/* Typography */
+.section-title{
+    font-size: 1.3rem;
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: .4rem;
+}
+.article-content{
+    padding-left: 0.8rem;
+}
+.article-content h2{
+    font-size: 1.25rem;
+}
+
+/* Timeline & event info */
+.timeline ul, .event-info{
+    font-size: .85rem;
+}
 .event-info{
-    background:#fff;
-    border:1px solid var(--accent);
-    border-radius:.6rem;
-    padding:4mm;
-    margin-top: 0.7mm;
+    border: 1px solid var(--accent);
+    border-radius: .6rem;
+    padding: 4mm;
+    margin-top: .7mm;
     break-inside: avoid-page;
 }
 .event-info h2{
-    margin:0 0 .4rem;
-    border-bottom:3px solid var(--accent);
-    color:#0f172a !important;
+    margin: 0 0 .4rem;
+    border-bottom: 3px solid var(--accent);
+    color: #0f172a !important;
 }
-.event-info, .event-info li, .event-info p{ color:#1f2328 !important; line-height:1.35; }
+.event-info, .event-info li, .event-info p{
+    line-height: 1.35;
+}
 
-/* Make sponsor images black again*/
-.sponsor-img--white {
-    filter: brightness(0)
+/* QR & sponsors */
+.qr{
+    max-width: 120px;
+}
+.sponsors{
+    gap: .6rem;
+    flex-wrap: wrap;
+}
+.sponsor-img--white{
+    filter: brightness(0);
+    height: 60px;
+    width: auto;
+    display: block;
+    max-width: 100%;
 }
