@@ -20,10 +20,7 @@ body {
     min-height: 100vh;
     background:
             linear-gradient(rgba(0, 22, 43, 0.6), rgba(0, 22, 43, 0.6)),
-            url("/portfolio/assets/finish-line-scene.webp") !important;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+            url("/portfolio/assets/finish-line-scene.webp") no-repeat center/cover !important;
     text-align: center;
 }
 
