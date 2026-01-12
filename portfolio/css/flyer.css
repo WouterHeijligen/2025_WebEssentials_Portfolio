@@ -8,8 +8,14 @@
 
 /* Base */
 html, body {
-    background: #fff;
     color: #0f172a;
+}
+
+body{
+    background-image: url("/portfolio/assets/flyer/flyer_background.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* The printable area matches the page content box (inside @page margins) */
