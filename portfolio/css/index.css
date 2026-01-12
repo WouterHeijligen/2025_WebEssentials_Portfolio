@@ -9,21 +9,18 @@ html {
     font-size: 16px;
     height: 100vh;
     background-color: #00162b;
-    overflow: hidden;
 }
 
 body {
     font-family: "Roboto Light", Calibri, sans-serif;
-    line-height: 1.5;
+    line-height: 1.618;
 }
 
 h1 {
-    /* 32px / 16 = 2rem */
     margin: 2rem 0;
     /* 1.6px / 16 = .1rem */
     letter-spacing: .1rem;
     color: #fff;
-    /* Kept in px */
     text-shadow: 3px 3px 3px rgba(0, 0, 0, .5);
 }
 
@@ -31,41 +28,34 @@ main {
     width: 100%;
     margin: 2rem 0;
     padding: 0 1rem;
-    max-width: none;
 }
 
 nav {
     /* 32px / 16 = 2rem */
     margin-top: 2rem;
-    font-weight: bold;
+    font-weight: 700;
+}
 
-    ul {
-        flex-direction: column;
-        display: flex;
-        /* 32px / 16 = 2rem */
-        gap: 2rem;
-        list-style: none;
-    }
+nav ul {
+    flex-direction: column;
+    display: flex;
+    /* 32px / 16 = 2rem */
+    gap: 2rem;
+    list-style: none;
+}
 
-    li {
-        display: flex;
-        /* 8px / 16 = .5rem; 16px / 16 = 1rem */
-        padding: .5rem 1rem;
-        /* 4px / 16 = .25rem */
-        /* Kept in px */
-        transition: .3s;
-        /* Kept in px */
-        backdrop-filter: blur(10px);
-        /* Kept in px */
-        width: 100%;
-    }
+nav li {
+    display: flex;
+    padding: .5rem 1rem;
+    transition: .3s;
+    backdrop-filter: blur(10px);
+    width: 100%;
+}
 
-    a {
-        flex: 1;
-        /* 24px / 16 = 1.5rem */
-        font-size: 1.5rem;
-        font-variant: small-caps;
-    }
+nav a {
+    flex: 1;
+    font-size: 1.5rem;
+    font-variant: small-caps;
 }
 
 aside {
@@ -77,12 +67,11 @@ aside {
     filter: grayscale(50%);
     opacity: .2;
     animation: move 20s infinite;
+}
 
-
-    img {
-        width: 100%;
-        height: auto;
-    }
+aside img {
+    width: 100%;
+    height: auto;
 }
 
 @keyframes move {
