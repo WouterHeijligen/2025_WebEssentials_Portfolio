@@ -1,28 +1,32 @@
 /* ===== A4 print setup + full-width header ===== */
 :root {
     --accent: #ff6a00;
+    /* Physical page size for A4 (portrait): 210mm × 297mm */
     --page-w: 210mm;
     --page-h: 297mm;
-    --page-margin: 10mm; /* change to taste */
+    /* Content margin inside the printable area; tweak to taste */
+    --page-margin: 10mm;
 }
 
-/* Base */
+/* Base (screen + print) */
 html, body {
     color: #0f172a;
+    min-width: 210mm; /* Lock to A4 width */
+    overflow-x: auto; /* Allow horizontal scroll on small screens */
 }
 
 body{
     background-image: url("/portfolio/assets/flyer/flyer_background.jpeg");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; /* Scale to cover entire viewport/page */
 }
 
 /* The printable area matches the page content box (inside @page margins) */
 .container{
     width: calc(var(--page-w) - 2 * var(--page-margin));
     min-height: auto;
-    margin: 0 auto;
+    margin: 0 auto; /* Center horizontally */
     padding: 0;
     box-sizing: border-box;
 }
@@ -31,14 +35,14 @@ body{
 .print-header--accent{
     /* Make the header reach both content edges by cancelling the page margin */
     width: calc(100% + 2 * var(--page-margin));
-    margin: 0 calc(-1 * var(--page-margin)) 6mm;
+    margin: 0 calc(-1 * var(--page-margin)) 6mm; /* Negative side margins cancel container margin; bottom gap 6mm */
     padding: 8mm 10mm 6mm;
     color: #fff;
     display: block;
     background: linear-gradient(135deg, var(--accent), rgba(255,106,0,.85));
 }
 .print-header--accent .article-title{
-    color: #fff !important;
+    color: #fff !important; /* Force white in case of inherited color rules */
     margin: 0 0 .25rem;
     font-size: 1.8rem;
 }
@@ -49,11 +53,13 @@ body{
 
 /* ---- Layout helpers ---- */
 .intro-pair{
+    /* Two-column grid: left slightly wider than right */
     display: grid;
     grid-template-columns: 1.2fr 1fr;
-    gap: 4mm;
-    align-items: center;
-    padding: 0 4mm;
+    gap: 4mm;           /* Physical spacing for consistent print layout */
+    align-items: center;/* Vertically center items within their tracks */
+    padding: 0 4mm;     /* Horizontal breathing space inside the section */
+
 }
 
 /* ---- Cards & imagery ---- */
@@ -70,21 +76,21 @@ body{
 .card-thumb{
     position: relative;
     width: 100%;
-    overflow: hidden;
+    overflow: hidden; /* Crop overflowing image corners */
     border-top-left-radius: .6rem;
     border-top-right-radius: .6rem;
 }
 .card-thumb img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: 50% 12%;
+    object-fit: cover;      /* Fill thumbnail while preserving aspect ratio */
+    object-position: 50% 12%; /* Focus a bit higher (useful for portraits) */
 }
 .aspect--portrait{
-    aspect-ratio: 2 / 3;
+    aspect-ratio: 2 / 3; /* Common portrait ratio */
 }
 .aspect--landscape{
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 16 / 9; /* Widescreen landscape ratio */
     border-radius: .6rem;
 }
 
@@ -93,13 +99,14 @@ body{
     background: #fff;
     border: 1px solid #bbbbbb;
     border-radius: .5rem;
-    overflow: hidden;
+    overflow: hidden; /* Ensure internal media respects rounding */
     margin: 3mm 0;
 }
 .figure img{
     width: 100%;
     height: auto;
-    display: block; }
+    display: block; /* Remove default inline gap */
+}
 .figure-caption{
     font-size: .85rem;
     padding: .5rem .75rem;
@@ -134,7 +141,7 @@ body{
     border-radius: .6rem;
     padding: 4mm;
     margin-top: .7mm;
-    break-inside: avoid-page;
+    break-inside: avoid-page; /* Avoid splitting event box across pages in print */
 }
 .event-info h2{
     margin: 0 0 .4rem;
@@ -151,9 +158,10 @@ body{
 }
 .sponsors{
     gap: .6rem;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Expect .sponsors to be a flex container */
 }
 .sponsor-img--white{
+    /* Convert white logos to black */
     filter: brightness(0);
     height: 60px;
     width: auto;

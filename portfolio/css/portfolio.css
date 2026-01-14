@@ -1,21 +1,21 @@
-/* import fonts */
+/* Import Roboto (300/400/500) and Open Sans (300/400) from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 
-/* Universal styles */
+/* Universal website styles */
 :root{
-    --accent:#ff6a00;
-    --panel-bg:rgba(255,255,255,.05);
-    --panel-border:rgba(255,255,255,.08);
-    --text-dim:rgba(255,255,255,.6);
+    --accent:#ff6a00;                  /* Brand accent color (orange) */
+    --panel-bg:rgba(255,255,255,.05);  /* Translucent panel background */
+    --panel-border:rgba(255,255,255,.08); /* Subtle panel border */
+    --text-dim:rgba(255,255,255,.6);   /* Muted text color for secondary copy */
 }
 
+/* Global defaults - Use border-box sizing everywhere (more predictable layouts) */
 * {
     box-sizing: border-box;
     font-family: "Roboto Light", "Roboto", "Open Sans", sans-serif;
     font-weight: 400;
 }
-
 html{
     line-height: 1.618;
 }
@@ -23,31 +23,31 @@ html{
 /* set body properties */
 body {
     color: #fff;
-    min-height: 100vh;
-    background-size: cover;
+    min-height: 100vh;         /* Ensure full viewport height */
+    background-size: cover;    /* Background image covers viewport */
     background-position: center;
-    background-color: #00162b;
+    background-color: #00162b; /* Fallback background (deep navy) */
 }
 
-/* Header - Mobile default */
+/* Header - Mobile first */
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 90%;
-    margin: 1rem 5%;
+    margin: 1rem 5%; /* Centered via symmetric margins */
     padding: 1rem 4%;
     background: rgba(255, 255, 255, .1);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); /* "Glass" effect */
     border: 2px solid var(--panel-bg);
     border-radius: 0.2rem;
-    z-index: 1100;
+    z-index: 1100; /* Above nav */
 }
 
-/* When scrolled */
+/* Compact header when page is scrolled (class toggled via JS) */
 .header.scrolled {
     margin-top: 0.5rem;   /* or 0 if you want it fully at the top */
     width: 90%;
@@ -56,7 +56,6 @@ body {
 /* Logo */
 .logo {
     color: #fff;
-    /* 30px / 16 = 1.875rem */
     font-size: 1.5rem;
     text-decoration: none;
     font-weight: 600;
@@ -67,15 +66,15 @@ body {
 /* Navbar hidden by default on mobile */
 .navbar {
     position: fixed;
-    top: 100%;
+    top: 100%; /* Placed just below .header */
     left: 0;
     width: 100%;
     padding: .5rem 4%;
     background-color: rgba(0, 22, 43, 0.9);
     border: 2px solid var(--panel-bg);
-    display: none;
+    display: none; /* Toggled by checkbox hack */
     font-weight: bold;
-    z-index: 1095;
+    z-index: 1095; /* Slightly under header */
 }
 
 /* Navbar links - Mobile default */
@@ -87,19 +86,16 @@ body {
     text-decoration: none;
     transition: .5s;
 }
-
 .navbar ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex; /* keeps desktop layout the same */
-    flex-direction: column; /* mobile default */
+    display: flex;
+    flex-direction: column; /* Stack vertically by default */
 }
-
 .navbar li {
     margin: 0;
 }
-
 .navbar a:hover {
     color: rgba(255, 106, 0, 0.8);
 }
@@ -118,7 +114,7 @@ body {
     display: none;
 }
 
-/* Show navbar when checkbox checked */
+/* Checkbox hack: when checked, show the mobile navbar */
 #check:checked ~ .navbar {
     display: block;
 }
@@ -130,7 +126,6 @@ body {
     margin-bottom: 2rem;
     border-bottom: 4px solid rgba(255, 106, 0, 0.6);
 }
-
 .hero-section h1 {
     font-size: 2.5rem;
     color: var(--accent);
@@ -140,9 +135,8 @@ body {
 .img-fluid{
     max-width:100%;
     height:auto;
-    display:block;
+    display:block; /* Responsive images */
 }
-
 .text-dim{
     color:var(--text-dim);
 }
@@ -151,28 +145,24 @@ body {
  .text-dim li::marker {
      color:var(--accent);
  }
-
 .text-accent {
     color:var(--accent);
 }
-
 .heading-strong{
     font-weight:700;
 }
-
 .flex{
     display:flex;
 }
-
 .section{
     margin-bottom:2rem;
 }
-
 .section-title{
     border-bottom:4px solid rgba(255,106,0,.6);
     padding-bottom:.4rem;
 }
 
+/* Buttons: base + variants */
 .btn{
     display:inline-block;
     padding:.55rem 1rem;
@@ -182,49 +172,52 @@ body {
     text-decoration:none;
     transition:all .25s ease;
 }
-
 .btn--accent{
     color:#00162b;
     background:var(--accent);
     border:2px solid var(--accent);
 }
-
 .btn--accent:hover{
     background:#ff7f22;
     border-color:#ff7f22;
 }
 
+/* Outline accent button */
 .btn--outline{
     color:var(--accent);
     border:2px solid rgba(255,106,0,.6);
     background:rgba(255,106,0,.12);
 }
-
 .btn--outline:hover{
     background:rgba(255,106,0,.25);
     border-color:var(--accent);
 }
 
+/*  Cards */
 .card{
     background:var(--panel-bg);
     border:2px solid var(--panel-border);
     border-radius:.6rem;
     overflow:hidden;
-    display:flex;flex-direction:column;height:100%;
+    display:flex;
+    flex-direction:column;
+    height:100%; /* Stretch to match grid rows if used */
     transition:transform .25s,border-color .25s,box-shadow .3s;
     margin-bottom:1rem;
 }
-
+.card-body{
+    color:#ddd;
+    padding:.75rem .9rem 1rem;
+}
 .card:hover{
     transform:translateY(-4px);
     border-color:rgba(255,106,0,.35);
     box-shadow:0 10px 24px rgba(0,0,0,.25);
 }
-
 .card-title{
     margin:0 0 .35rem;
 }
-
+/* Card media wrapper (rounded only at the top) */
 .card-thumb{
     position:relative;
     width:100%;
@@ -232,68 +225,61 @@ body {
     border-top-left-radius:.6rem;
     border-top-right-radius:.6rem;
 }
-
-.aspect--portrait{
-    aspect-ratio:2/3;
-}
-
-.aspect--landscape{
-    aspect-ratio:16/9;
-}
-
-.aspect--4x3{
-    aspect-ratio:4/3;
-}
-
+/* Image fills media area */
 .card-thumb img{
     width:100%;
     height:100%;
     object-fit:cover;
     object-position:50% 12%;
 }
+/* Aspect helpers for images/wrappers */
+.aspect--portrait{
+    aspect-ratio:2/3;
+}
+.aspect--landscape{
+    aspect-ratio:16/9;
+}
+.aspect--4x3{
+    aspect-ratio:4/3;
+}
 
 .focus-top{
     object-position:50% 8% !important;
 }
-
 .focus-lower{
     object-position:50% 25% !important;
 }
 
-.card-body{
-    color:#ddd;
-    padding:.75rem .9rem 1rem;
-}
-
+/* Panels & badges */
 .details-panel{
     background:var(--panel-bg);
     border:2px solid var(--panel-border);
     border-radius:.6rem;
     padding:.75rem 1rem;
 }
-
 .summary-link{
     color:rgba(255,106,0,.85);
     cursor:pointer;
     font-weight:600;
 }
-
 .summary-link::after{
     font-size:.85em;
     color:rgba(255,106,0,.6);
 }
 
+/* Pill-style label/chip */
 .chip{
     background: var(--panel-bg);
     border:1px solid var(--panel-border);
     color:#ddd;
     padding:.45rem .8rem;
-    border-radius:999px;
+    border-radius:999px; /* Full rounding */
     font-size:.85rem;
     white-space:nowrap;
     margin-right:0.3rem;
 }
 
+/* Gallery */
 .gallery-card{
     background:var(--panel-bg);
     border:2px solid var(--panel-border);
@@ -301,7 +287,6 @@ body {
     overflow:hidden;
     margin:0;
 }
-
 .gallery-card img{
     width:100%;
     height:100%;
@@ -310,9 +295,9 @@ body {
     display:block;
 }
 
-/* Driver page */
+/* Driver page images inside card-thumb */
 .card-thumb .driver-img {
-    max-width: none;
+    max-width: none; /* Allow beyond intrinsic constraints if needed */
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -323,22 +308,22 @@ body {
 .list--icon {
     list-style: none;
     margin: 0 0 1rem 0;
-    padding-left: 0;   /* cancels default ul indent */
+    padding-left: 0;  /* cancels default ul indent */
 }
 
-/* Ensure the main label is on its own line */
+/* Force main labels to their own line if they contain sublists */
 .list--icon .has-sublist {
     display: block;
 }
 
 /* The nested years list: remove default indentation/margins */
 .list--icon .subyears {
-    margin-left: 2rem;               /* remove default top/bottom margin */
-    padding-left: 1rem;      /* small indent so years don’t touch the label */
-    list-style: square;        /* classic bullets; or use 'none' if you prefer */
+    margin-left: 2rem;   /* remove default top/bottom margin */
+    padding-left: 1rem;  /* small indent so years don’t touch the label */
+    list-style: square;  /* classic bullets; or use 'none' if you prefer */
 }
 
-/* Tidy spacing and align the icon with the text */
+/* Root items: align icon and text nicely */
 .list--icon > li {
     display: flex;
     align-items: baseline;
@@ -360,9 +345,8 @@ body {
 }
 
 .table-striped tbody tr:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* optional hover effect */
+    background-color: rgba(255, 255, 255, 0.1); /* hover effect */
 }
-
 
 /* Gallery page */
 /* Hide the radio buttons (used as checkbox for changing the main picture) */
@@ -390,7 +374,7 @@ input[name="gallery"] {
     transition: opacity 1.5s ease-in-out; /* Transition animation */
 }
 
-/* Toggle Visibility based on Radio Selection */
+/* When a radio is checked, reveal the corresponding main image */
 #img-1:checked ~ .main-display .img-1-view,
 #img-2:checked ~ .main-display .img-2-view,
 #img-3:checked ~ .main-display .img-3-view,
@@ -411,16 +395,12 @@ input[name="gallery"] {
 /* Thumbnail Grid Layout (No scrollbar, multi-row) */
 .thumbnail-grid {
     gap: 0.3rem; /* Space between thumbnails */
-    overflow: visible; /* Remove scroll constraints */
+    overflow: visible; /* Let rows wrap without scrolling constraints */
 }
-
 .thumbnail-grid label {
     cursor: pointer;
-    /* On mobile, thumbnails will grow to fill space if needed,
-       but we set a base width of 100px */
-    flex: 0 1 100px;
+    flex: 0 1 100px; /* On mobile, thumbnails will grow to fill space if needed, set base width of 100px */
 }
-
 .thumb {
     width: 100%; /* Fill the label width */
     height: 4rem;
@@ -429,13 +409,11 @@ input[name="gallery"] {
     border: 2px solid transparent;
     transition: border-color 0.5s, opacity 0.2s;
 }
-
-/* Thumbnail hover effect */
 .thumb:hover {
     opacity: 0.6;
 }
 
-/* Thumbnail Highlighting (One for each) */
+/* Highlight the active thumbnail matching the checked radio */
 #img-1:checked ~ .thumbnail-grid label[for="img-1"] img,
 #img-2:checked ~ .thumbnail-grid label[for="img-2"] img,
 #img-3:checked ~ .thumbnail-grid label[for="img-3"] img,
@@ -451,7 +429,8 @@ input[name="gallery"] {
     border-color:rgba(255, 106, 0, 0.6);
     transform: scale(0.95);
 }
-/* Footer base */
+
+/* Footer */
 .footer {
     background: rgba(255, 255, 255, 0.05); /* subtle translucent panel like your stats boxes */
     border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -481,28 +460,24 @@ input[name="gallery"] {
     margin-bottom: 2rem;
 }
 
-/* News CSS */
+/* News */
 .news-body{
     color:#ddd;padding:.75rem .9rem 1rem;
 }
-
 .news-title{
     margin:.25rem 0 .25rem;
 }
-
 .news-kicker{
     color:var(--accent);
     font-weight:600;
     font-size:.9rem;
     letter-spacing:.02em;
 }
-
 .news-meta{
     color:var(--text-dim);
     font-size:.85rem;
     margin-bottom:.5rem;
 }
-
 .news-excerpt{
     color:#ccc;
     font-size:.95rem;
@@ -515,11 +490,9 @@ input[name="gallery"] {
     border-radius:.6rem;
     overflow:hidden;
 }
-
 .article-hero{ /* hero image on article page */
     position:relative;
 }
-
 .article-hero .card-thumb{
     border-top-left-radius:.6rem;
     border-top-right-radius:.6rem;
@@ -529,18 +502,15 @@ input[name="gallery"] {
     padding:1rem 1rem .5rem;
     color:#ddd;
 }
-
 .article-title{
     color:var(--accent);
     margin:0 0 .25rem;
 }
-
 .article-subtitle{
     color:var(--text-dim);
     margin:0 0 .75rem;
     font-size:1rem;
 }
-
 .article-meta{
     color:var(--text-dim);
     font-size:.85rem;
@@ -549,13 +519,11 @@ input[name="gallery"] {
 .article-content{
     padding-left: 0.8rem;
 }
-
 .article-content h2{
     color:var(--accent);
     margin:0.5rem 0;
     font-size:1.25rem;
 }
-
 .article-divider{
     height:2px;
     background:rgba(255,255,255,.08);
@@ -571,15 +539,21 @@ input[name="gallery"] {
     max-width:140px;
 }
 
+/* Sponsor logo row */
+.sponsors{
+    gap:.75rem;
+    flex-wrap:wrap;
+}
+/* Sponsor artwork inverted to white for dark backgrounds */
 .sponsor-img--white {
-    /* make artwork solid black, then invert to white */
     filter: brightness(0) invert(1);
-    height: 70px;      /* ↓ make this smaller/larger as you like */
+    height: 70px;
     width: auto;       /* preserve aspect ratio */
     display: block;
     max-width: 100%;
 }
 
+/* Pull quote callout */
 .pull-quote{
     background:rgba(255,255,255,.05);
     border-left:4px solid rgba(255,106,0,.6);
@@ -589,6 +563,7 @@ input[name="gallery"] {
     border-radius:.4rem;
 }
 
+/* Generic figure with caption */
 .figure{
     background:rgba(255,255,255,.03);
     border:1px solid rgba(255,255,255,.08);
@@ -596,26 +571,18 @@ input[name="gallery"] {
     overflow:hidden;
     margin:1rem 0;
 }
-
 .figure img{
     width:100%;
     height:auto;
     display:block;
 }
-
 .figure-caption{
     color:var(--text-dim);
     font-size:.85rem;
     padding:.5rem .75rem;
 }
 
-.sponsors{
-    gap:.75rem;
-    flex-wrap:wrap;
-}
-
 /* -------------------- MEDIA QUERIES -------------------- */
-
 /* Tablet and up (≥ 768px) */
 @media (min-width: 768px) {
     .header {
@@ -644,33 +611,31 @@ input[name="gallery"] {
     }
     .navbar ul {
         display: flex;
-        flex-direction: row;
+        flex-direction: row; /* Horizontal nav */
     }
-
     .navbar li {
         margin-left: 2.1rem; /* matches your current spacing */
-    }
-    .hero-section h1 {
-        font-size: 3rem;
     }
     #navigation {
         min-height: 20rem;
     }
 
-    /* Home page */
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+
+    /* Home page refinements */
     .card-body{
         padding:1rem 1.1rem 1.25rem;
     }
-
     .card-thumb img{
         object-position:50% 14%;
     }
 
-    /* News CSS*/
+    /* News article spacing */
     .article-header{
         padding:1.25rem 1.25rem .75rem;
     }
-
     .article-content{
         padding:1.25rem 1.5rem;
     }
@@ -686,15 +651,16 @@ input[name="gallery"] {
         font-size: 1rem;
         margin-left: 0.6rem;
     }
+    #navigation {
+        min-height: 45rem;
+    }
     .header {
         margin: 6.25rem 5%;
         padding: 1.25rem 6.25rem;
     }
+
     .hero-section h1 {
         font-size: 4rem;
-    }
-    #navigation {
-        min-height: 45rem;
     }
 
     /* Home page */
@@ -731,7 +697,7 @@ input[name="gallery"] {
         object-position:50% 16%;
     }
 
-    /* News CSS*/
+    /* News article spacing */
     .article-content{
         padding:1.5rem 2rem;
     }
@@ -743,30 +709,30 @@ input[name="gallery"] {
 
 /* -------------------- PRINT STYLES -------------------- */
 @media print {
-    /* Hide layout elements */
+    /* Hide non-content UI */
     .header, .navbar, #menu-icon, #navigation, .footer, .back-to-top, .pull-quote {
         display: none !important;
     }
 
-    /* Kill any print-time transforms that can push content */
+    /* Neutralize transforms that may disrupt pagination */
     body, .article{ transform: none !important; }
 
-    /* Avoid large top margins at the very first printable element */
+    /* Avoid extra top gap in the first element within .article */
     .article > :first-child{ margin-top: 0 !important; }
 
-    /* white background and black text color */
+    /* Force white background and black text color */
     html, body, .text-dim, h3 {
         background:#fff;
         color: black !important;
     }
 
-    /* ensure child elements aren't collapsing or overflowing in print */
+    /* Flatten any grid/flex rows/columns that could break in print */
     .row, .column {
         display: block !important;
         width: 100% !important;
     }
 
-    /* remove article border */
+    /* Simplify article chrome and prevent splitting across pages */
     .article{
         border:0;
         border-radius: 0;
@@ -775,7 +741,7 @@ input[name="gallery"] {
         break-inside: avoid-page;
     }
 
-    /* Make sponsor images black again*/
+    /* Make sponsor images print as black (not inverted white) */
     .sponsor-img--white {
         filter: brightness(0)
     }

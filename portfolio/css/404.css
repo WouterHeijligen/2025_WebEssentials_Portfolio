@@ -7,7 +7,7 @@
 
 /* style 404 */
 .error-container > span {
-    display: inline-block;
+    display: inline-block; /* keep digits on one line, but respect height */
     line-height: 0.7;
     position: relative;
     vertical-align: middle;

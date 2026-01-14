@@ -1,16 +1,19 @@
+/* ===== Global reset & box model ===== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0;                 /* Remove default browser margins */
+    padding: 0;                /* Remove default browser padding */
+    box-sizing: border-box;    /* Include padding & border in element width/height */
 }
 
+
+/* ===== Root document sizing & background ===== */
 html {
-    /* Kept at 16px to define the 1rem base */
-    font-size: 16px;
-    height: 100vh;
+    font-size: 16px;           /* Keeps 1rem = 16px for predictable scaling */
+    height: 100vh;             /* Full viewport height (useful for backgrounds) */
     background-color: #00162b;
 }
 
+/* ===== Base text styles ===== */
 body {
     font-family: "Roboto Light", Calibri, sans-serif;
     line-height: 1.618;
@@ -24,49 +27,47 @@ h1 {
     text-shadow: 3px 3px 3px rgba(0, 0, 0, .5);
 }
 
+/* ===== Primary content wrapper ===== */
 main {
-    width: 100%;
-    margin: 2rem 0;
-    padding: 0 1rem;
+    width: 100%; /* Allow content to span the available width */
+    margin: 2rem 0; /* Vertical rhythm around the main section */
+    padding: 0 1rem; /* Horizontal breathing room inside main */
 }
 
 nav {
-    /* 32px / 16 = 2rem */
-    margin-top: 2rem;
+    margin-top: 2rem; /* Push nav away from the top slightly */
     font-weight: 700;
 }
 
 nav ul {
-    flex-direction: column;
-    display: flex;
-    /* 32px / 16 = 2rem */
+    display: flex; /* Lay out nav items in a flexible row/column */
+    flex-direction: column; /* Stack links vertically by default (mobile-first) */
     gap: 2rem;
     list-style: none;
 }
 
 nav li {
-    display: flex;
-    padding: .5rem 1rem;
+    display: flex;             /* Let child (anchor) flex to fill row */
+    padding: .5rem 1rem;       /* Clickable area around each item */
     transition: .3s;
     backdrop-filter: blur(10px);
     width: 100%;
 }
 
 nav a {
-    flex: 1;
+    flex: 1; /* Anchor fills the li row */
     font-size: 1.5rem;
     font-variant: small-caps;
 }
 
 aside {
-    /* 150px / 16 = 9.375rem */
-    width: 9.375rem;
-    position: absolute;
+    /* 150px wide asset, responsive via rems */
+    position: absolute;        /* Take out of flow and anchor to viewport edge */
     bottom: 0;
     right: 0;
     filter: grayscale(50%);
     opacity: .2;
-    animation: move 20s infinite;
+    animation: move 20s infinite; /* Periodic rise/fall animation */
 }
 
 aside img {
@@ -76,32 +77,27 @@ aside img {
 
 @keyframes move {
     0%, 100% {
-        /* -150px / 16 = -9.375rem */
-        bottom: -9.375rem;
-        opacity: .2;
+        bottom: -9.375rem;     /* Start/finish off-screen below */
+        opacity: .2;           /* Subtle when hidden */
     }
     10% {
-        /* -10px / 16 = -.625rem */
-        bottom: -.625rem;
-        opacity: 1;
+        bottom: -.625rem;      /* Briefly rise into view near the edge */
+        opacity: 1;            /* Fully visible at the peak */
     }
     10.5% {
-        /* -150px / 16 = -9.375rem */
-        bottom: -9.375rem;
-        opacity: .2;
+        bottom: -9.375rem;     /* Drop back off-screen quickly */
+        opacity: .2;           /* Fade again */
     }
 }
 
-/* Responsive Design for Mobile Devices */
+/* ===== Responsive enhancement (progressive) ===== */
 @media (min-width: 600px) {
     main {
-        /* 32px / 16 = 2rem */
-        text-align: center;
+        text-align: center;    /* Center main content on wider screens */
     }
 
-    /* 2. Vertical Stacking For buttons */
+    /* Switch nav from vertical stack to horizontal row on wider screens */
     nav ul {
-        /* Changes the flex direction from row (default) to column */
         flex-direction: row;
     }
 }
